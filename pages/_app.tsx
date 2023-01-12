@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>dev, note, daily</title>
         <meta name='description' content='eow' />
-        <link rel='icon' href={`${prefix}/image/profile.png`} />
+        <link rel='icon' href={`${prefix}/images/profile.png`} />
       </Head>
       <PortfolioProvider value={prefix}>
         <ThemeProvider theme={theme}>
