@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[86],{830:function(n,u,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/post",function(){return t(9135)}])},9135:function(n,u,t){"use strict";t.r(u);var _=t(8598);t(2684);var i=function(){return(0,_.jsx)("div",{children:"Posts"})};u.default=i}},function(n){n.O(0,[774,888,179],function(){return n(n.s=830)}),_N_E=n.O()}]);
