@@ -16,7 +16,7 @@ export const Float: React.FC = () => {
 
   return (
     <Main
-      style={{ display: scrollY > 700 ? 'none' : '' }}
+      style={{ display: scrollY < 700 ? 'none' : '' }}
       onClick={() =>
         window.scroll({
           top: 0,
