@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { Preview } from 'components/common/editor'
-import { isDev, prefix } from 'infra/config'
+import { prefix } from 'infra/config'
 
 const Posts: NextPage<{ data: string }> = ({ data }) => {
   useEffect(() => {
-    // eslint-disable-next-line no-debugger
-    debugger
-    fetch(`${prefix}/posts/${decodeURI('2021년 회고')}${isDev ? '.md' : ''}`)
+    fetch(`${prefix}/posts/${decodeURI('2021년 회고.md')}`)
       .then((res) => {
         console.log(res)
         return res.text()
@@ -18,9 +16,11 @@ const Posts: NextPage<{ data: string }> = ({ data }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch(
-    `${prefix}/posts/${decodeURI('2021년 회고')}${isDev ? '.md' : ''}`,
-  )
+  const data = await fetch(`${prefix}/posts/${decodeURI('2021년 회고.md')}`, {
+    headers: {
+      block_interest_cohort: 'false',
+    },
+  })
     .then((res) => res.text())
     .then((text) => text)
   return {
