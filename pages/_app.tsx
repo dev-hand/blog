@@ -15,12 +15,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>dev, note, daily</title>
         <meta name='description' content='eow' />
-        <link rel='icon' href='/image/profile.png' />
+        <link rel='icon' href={`${prefix}/image/profile.png`} />
       </Head>
       <PortfolioProvider value={prefix}>
         <ThemeProvider theme={theme}>
           <BackgroundImage
-            url='/image/black-cover-1.jpeg'
+            url='/images/black-cover-1.jpeg'
             style={{ backgroundSize: 'contain' }}
           >
             <Component {...pageProps} />

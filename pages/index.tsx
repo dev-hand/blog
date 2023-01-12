@@ -16,18 +16,18 @@ const Home: NextPage = () => {
           <Media>
             <Row>
               <MainImage
-                url='/image/item-11.jpeg'
+                url='/images/item-11.jpeg'
                 title={`Flexible Developer`}
                 subject={`나의 가치를 발산시킬 수 있는 공간에서\n퍼니하고 해피하게 일하기`}
               />
               <Column>
                 <SubImage
-                  url='/image/item-8.jpeg'
+                  url='/images/item-8.jpeg'
                   title={`Problem Create`}
                   subject={`문제 현상을 발견하고 창의적으로 발산하고\n근본 문제를 정의하는 것`}
                 />
                 <SubImage
-                  url='/image/item-13.jpeg'
+                  url='/images/item-13.jpeg'
                   title={`Solution Search`}
                   subject={`문제만 정확히 정의했다면 해결은 쉽다`}
                 />
