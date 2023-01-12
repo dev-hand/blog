@@ -12,7 +12,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const data = await fetch(
     `${prefix}/posts/${decodeURI('2021년 회고')}${isDev ? '.md' : ''}`,
   )
-    .then((res) => res.text())
+    .then((res) => {
+      debugger
+      return res.text()
+    })
     .then((text) => text)
   return {
     props: { data },
