@@ -13,6 +13,7 @@ export const getStaticProps: GetStaticProps = async () => {
     `${prefix}/posts/${decodeURI('2021년 회고')}${isDev ? '.md' : ''}`,
   )
     .then((res) => {
+      // eslint-disable-next-line no-debugger
       debugger
       return res.text()
     })
