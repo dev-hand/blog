@@ -25,7 +25,7 @@ interface ListItemProps {
 const WIDTH = 300
 const IMAGE_HEIGHT = 350
 
-export const BlogItem: React.FC<ListItemProps> = ({ item }) => {
+export const PostItem: React.FC<ListItemProps> = ({ item }) => {
   const title = titleFormat(item.text)
   const subject = subjectFormat(item.text)
   const thumbnail = thumbnailFormat(item.text)

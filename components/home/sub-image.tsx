@@ -5,20 +5,20 @@ import {
   BackgroundWrapper,
 } from 'styles/components/home/image'
 import { Column } from 'styles/components/common/layout'
-import { DescText, HeaderText } from 'styles/components/common/text'
+import { DescText, H2Text } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
 
-interface MainItemProps {
+interface SubItemProps {
   url: string
   title: string
   subject: string
 }
 
-export const MainItem: React.FC<MainItemProps> = ({ url, title, subject }) => {
+export const SubImage: React.FC<SubItemProps> = ({ url, title, subject }) => {
   return (
-    <BackgroundContainer style={{ width: 660, height: 500 }}>
+    <BackgroundContainer style={{ width: 400, height: 250 }}>
       <Column style={{ padding: 20, height: '100%', justifyContent: 'end' }}>
-        <HeaderText
+        <H2Text
           fontFamily='L'
           style={{
             zIndex: 1,
@@ -27,13 +27,13 @@ export const MainItem: React.FC<MainItemProps> = ({ url, title, subject }) => {
           }}
         >
           {title}
-        </HeaderText>
-        <DescText style={{ color: theme.color.white, fontSize: theme.size.h3 }}>
+        </H2Text>
+        <DescText style={{ color: theme.color.white, fontSize: theme.size.h5 }}>
           {subject}
         </DescText>
       </Column>
       <BackgroundWrapper>
-        <BackgroundImage url={url} style={{ width: 660, height: 500 }} />
+        <BackgroundImage url={url} style={{ width: 400, height: 250 }} />
       </BackgroundWrapper>
     </BackgroundContainer>
   )

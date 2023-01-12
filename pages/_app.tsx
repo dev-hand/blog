@@ -5,27 +5,28 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'styles/theme'
-import { SWRConfig } from 'swr'
 import { BackgroundImage } from 'styles/components/home/image'
+import { PortfolioProvider } from 'infra/context'
+import { prefix } from 'infra/config'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Nostalgic - Every Ones Weekend</title>
+        <title>dev, note, daily</title>
         <meta name='description' content='eow' />
         <link rel='icon' href='/image/profile.png' />
       </Head>
-      <ThemeProvider theme={theme}>
-        <SWRConfig value={{ suspense: true }}>
+      <PortfolioProvider value={prefix}>
+        <ThemeProvider theme={theme}>
           <BackgroundImage
             url='/image/black-cover-1.jpeg'
             style={{ backgroundSize: 'contain' }}
           >
             <Component {...pageProps} />
           </BackgroundImage>
-        </SWRConfig>
-      </ThemeProvider>
+        </ThemeProvider>
+      </PortfolioProvider>
     </>
   )
 }
