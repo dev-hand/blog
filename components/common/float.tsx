@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Column } from 'styles/components/common/layout'
 import { AiOutlineArrowUp } from 'react-icons/ai'
-import { theme } from 'styles/theme'
 
 export const Float: React.FC = () => {
   const [scrollY, setScrollY] = useState(0)

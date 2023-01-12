@@ -1,14 +1,14 @@
 import React from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { Preview } from 'components/common/editor'
+import { prefix } from 'infra/config'
 
-const Posts: NextPage<{ data: any }> = ({ data }) => {
-  console.log(data)
+const Posts: NextPage<{ data: string }> = ({ data }) => {
   return <Preview source={data} />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch('http://localhost:3000/posts/2021년 회고.md')
+  const data = await fetch(`${prefix}/posts/${decodeURI('2021년 회고')}`)
     .then((res) => res.text())
     .then((text) => text)
   return {
