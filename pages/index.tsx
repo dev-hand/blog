@@ -1,5 +1,5 @@
 import React from 'react'
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import { Column, Media, Row } from 'styles/components/common/layout'
 import { MainImage } from 'components/home/main-image'
 import { SubImage } from 'components/home/sub-image'
@@ -7,8 +7,21 @@ import { theme } from 'styles/theme'
 import { Float } from 'components/common/float'
 import { Frame } from 'components/common/frame'
 import { PostList } from 'components/home/post-list'
+import { prefix } from 'infra/config'
+import { posts } from 'public/posts'
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await Promise.all(
+    posts.map((post) => {
+      return fetch(`${prefix}/posts/${decodeURI(post)}`)
+    }),
+  ).then((res) => Promise.all(res.map((res) => res.text())))
+  return {
+    props: { data },
+  }
+}
+
+const Home: NextPage<{ data: string[] }> = ({ data }) => {
   return (
     <Frame>
       <Row style={{ justifyContent: 'center' }}>
@@ -43,7 +56,7 @@ const Home: NextPage = () => {
         }}
       >
         <Media>
-          <PostList />
+          <PostList data={data} />
         </Media>
       </Column>
       <Float />

@@ -14,23 +14,21 @@ import {
 } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
 import Link from 'next/link'
-import { Blog } from 'infra/type'
-import { subjectFormat, thumbnailFormat, titleFormat } from 'utils/format'
+import { layoutFormat, thumbnailFormat } from 'utils/format'
 import moment from 'moment'
-
-interface ListItemProps {
-  item: Blog
-}
+import { prefix } from 'infra/config'
 
 const WIDTH = 300
 const IMAGE_HEIGHT = 350
 
-export const PostItem: React.FC<ListItemProps> = ({ item }) => {
-  const title = titleFormat(item.text)
-  const subject = subjectFormat(item.text)
-  const thumbnail = thumbnailFormat(item.text)
+export const PostItem: React.FC<{ item: string }> = ({ item }) => {
+  const title = layoutFormat('title', item)
+  const subject = layoutFormat('subject', item)
+  const date = layoutFormat('date', item)
+  const path = layoutFormat('path', item)
+  const thumbnail = thumbnailFormat(item)
   return (
-    <Link href={`/blog/${title}?id=${item.id}`}>
+    <Link href={`${prefix}/post/${path}`}>
       <Main>
         {thumbnail && (
           <BackgroundContainer style={{ height: IMAGE_HEIGHT }}>
@@ -46,7 +44,7 @@ export const PostItem: React.FC<ListItemProps> = ({ item }) => {
               </H5Text>
             </Column>
             <CoverImageWrapper>
-              <CoverImage className='coverImage' url={`/image/${thumbnail}`} />
+              <CoverImage className='coverImage' url={`/images/${thumbnail}`} />
             </CoverImageWrapper>
           </BackgroundContainer>
         )}
@@ -71,7 +69,7 @@ export const PostItem: React.FC<ListItemProps> = ({ item }) => {
               color: theme.color.gray4,
             }}
           >
-            {moment(item.createdAt).format('YYYY년 M월 D일')}
+            {moment(date).format('YYYY년 M월 D일')}
           </BaseText>
         </Column>
       </Main>
