@@ -25,10 +25,9 @@ export const PostItem: React.FC<{ item: string }> = ({ item }) => {
   const title = layoutFormat('title', item)
   const subject = layoutFormat('subject', item)
   const date = layoutFormat('date', item)
-  const path = layoutFormat('path', item)
   const thumbnail = thumbnailFormat(item)
   return (
-    <Link href={`${prefix}/post/${path}`}>
+    <Link href={`${prefix}/posts/${title}`}>
       <Main>
         {thumbnail && (
           <BackgroundContainer style={{ height: IMAGE_HEIGHT }}>

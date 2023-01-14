@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next'
 import { Preview } from 'components/common/editor'
 import { prefix } from 'infra/config'
 import { contentFormat, layoutFormat } from 'utils/format'
@@ -10,18 +10,12 @@ import { Media } from 'styles/components/common/layout'
 import { theme } from 'styles/theme'
 import moment from 'moment'
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-  return {
-    paths: [],
-    fallback: 'blocking',
-  }
-}
-
 export const getStaticProps: GetStaticProps = async (context) => {
   const title = context.params?.title as string
-  const data = await fetch(`${prefix}/posts/${decodeURI(title)}`)
-    .then((res) => res.text())
-    .then((text) => text)
+  const data = await fetch(decodeURI(`${prefix}/posts/${title}.md`)).then(
+    (res) => res.text(),
+  )
+
   return {
     props: { data },
   }
