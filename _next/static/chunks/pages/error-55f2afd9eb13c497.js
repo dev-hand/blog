@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[510],{123:function(n,r,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/error",function(){return u(9469)}])},9469:function(n,r,u){"use strict";u.r(r);var t=u(8598);u(2684);var _=function(){return(0,t.jsx)("div",{children:"Error"})};r.default=_}},function(n){n.O(0,[774,888,179],function(){return n(n.s=123)}),_N_E=n.O()}]);
