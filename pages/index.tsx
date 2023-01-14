@@ -13,7 +13,7 @@ import { posts } from 'public/posts'
 export const getStaticProps: GetStaticProps = async () => {
   const data = await Promise.all(
     posts.map((post) => {
-      return fetch(decodeURI(`${prefix}/posts/${post}`))
+      return fetch(decodeURI(`${prefix}/posts/${post}.md`))
     }),
   ).then((res) => Promise.all(res.map((res) => res.text())))
   return {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetStaticProps, NextPage } from 'next'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { Preview } from 'components/common/editor'
 import { prefix } from 'infra/config'
 import { contentFormat, layoutFormat } from 'utils/format'
@@ -9,6 +9,22 @@ import { BaseText, HeaderText } from 'styles/components/common/text'
 import { Media } from 'styles/components/common/layout'
 import { theme } from 'styles/theme'
 import moment from 'moment'
+import { posts } from 'public/posts'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        title: post,
+      },
+    }
+  })
+  console.log(paths)
+  return {
+    paths,
+    fallback: false,
+  }
+}
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const title = context.params?.title as string
