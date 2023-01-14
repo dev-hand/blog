@@ -6,7 +6,7 @@ export const BackgroundContainer = styled(Column)`
   :hover .backgroundWrapper {
     opacity: 0.2;
   }
-  background-color: ${(p) => p.theme.color.black1};
+  background-color: ${(p) => p.theme.color.black};
 `
 
 export const BackgroundWrapper = styled(Column).attrs(() => ({

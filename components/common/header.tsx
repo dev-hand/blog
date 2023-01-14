@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Media, Row } from 'styles/components/common/layout'
-import { HeaderText } from 'styles/components/common/text'
+import { H1Text } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
 import Link from 'next/link'
 import { AiFillGithub, AiFillMail, AiFillRead } from 'react-icons/ai'
@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
       <Media>
         <Row style={{ justifyContent: 'space-between', padding: '20px 0' }}>
           <Link href='/'>
-            <HeaderText
+            <H1Text
               fontFamily='L'
               style={{
                 color: theme.color.white,
@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
               }}
             >
               Nostalgic.
-            </HeaderText>
+            </H1Text>
           </Link>
           <Row style={{ marginBlockStart: 'auto' }}>
             <IconContainer>

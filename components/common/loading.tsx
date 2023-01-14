@@ -25,7 +25,7 @@ const Main = styled(Column)`
   position: fixed;
   justify-content: center;
   align-items: center;
-  background-color: ${(p) => p.theme.color.black1};
+  background-color: ${(p) => p.theme.color.black};
   svg {
     @keyframes spin {
       0% {

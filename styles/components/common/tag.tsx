@@ -3,16 +3,16 @@ import { Row } from 'styles/components/common/layout'
 
 export const Tag = styled(Row)`
   padding: 5px 30px;
-  background-color: ${(p) => p.theme.color.black1};
+  background-color: ${(p) => p.theme.color.black};
   color: ${(p) => p.theme.color.white};
   font-weight: ${(p) => p.theme.weight.bold};
   border-radius: 4px;
   transition: 0.2s;
   cursor: pointer;
   :hover {
-    background-color: ${(p) => p.theme.color.black1}cc;
+    background-color: ${(p) => p.theme.color.black}cc;
   }
   :active {
-    background-color: ${(p) => p.theme.color.black1}ee;
+    background-color: ${(p) => p.theme.color.black}ee;
   }
 `

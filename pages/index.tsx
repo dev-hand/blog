@@ -51,7 +51,7 @@ const Home: NextPage<{ data: string[] }> = ({ data }) => {
       </Row>
       <Column
         style={{
-          backgroundColor: theme.color.background,
+          backgroundColor: theme.color.background1,
           padding: '50px 0',
         }}
       >

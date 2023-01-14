@@ -49,7 +49,7 @@ export const PostItem: React.FC<{ item: string }> = ({ item }) => {
         )}
         <Column
           style={{
-            border: `1px solid ${theme.color.background}`,
+            border: `1px solid ${theme.color.background1}`,
             backgroundColor: theme.color.white,
             padding: '20px 10px',
             gap: 10,

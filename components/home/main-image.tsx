@@ -5,7 +5,7 @@ import {
   BackgroundWrapper,
 } from 'styles/components/home/image'
 import { Column } from 'styles/components/common/layout'
-import { DescText, HeaderText } from 'styles/components/common/text'
+import { DescText, H1Text } from 'styles/components/common/text'
 import { theme } from 'styles/theme'
 
 interface MainItemProps {
@@ -18,7 +18,7 @@ export const MainImage: React.FC<MainItemProps> = ({ url, title, subject }) => {
   return (
     <BackgroundContainer style={{ width: 660, height: 500 }}>
       <Column style={{ padding: 20, height: '100%', justifyContent: 'end' }}>
-        <HeaderText
+        <H1Text
           fontFamily='L'
           style={{
             zIndex: 1,
@@ -27,7 +27,7 @@ export const MainImage: React.FC<MainItemProps> = ({ url, title, subject }) => {
           }}
         >
           {title}
-        </HeaderText>
+        </H1Text>
         <DescText style={{ color: theme.color.white, fontSize: theme.size.h3 }}>
           {subject}
         </DescText>

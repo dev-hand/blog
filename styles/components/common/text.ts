@@ -4,6 +4,7 @@ import { theme } from 'styles/theme'
 const common = {
   color: '#24273a',
   'font-size': theme.size.default,
+  'white-space': 'pre-wrap',
 }
 
 enum FontFamilyType {
@@ -13,9 +14,11 @@ enum FontFamilyType {
 
 export const BaseText = styled.span<{
   fontFamily?: 'P' | 'L'
+  color?: string
 }>`
   ${common}
-  font-weight: ${(p) => p.theme.weight.regular};
+  ${(p) => p.color && `color: ${p.color};`}
+  font-weight: ${(p) => p.theme.weight.medium};
   font-family: ${(p) =>
     p.fontFamily ? FontFamilyType[p.fontFamily] : FontFamilyType.P};
 `
@@ -24,15 +27,34 @@ export const DescText = styled.p`
   ${common}
   font-weight: ${(p) => p.theme.weight.regular};
   line-height: 1.8;
-  white-space: pre-wrap;
+`
+
+export const LightText = styled(BaseText)`
+  font-weight: ${(p) => p.theme.weight.light};
+`
+
+export const RegularText = styled(BaseText)`
+  font-weight: ${(p) => p.theme.weight.regular};
+`
+
+export const SemiBoldText = styled(BaseText)`
+  font-weight: ${(p) => p.theme.weight.semiBold};
 `
 
 export const BoldText = styled(BaseText)`
   font-weight: ${(p) => p.theme.weight.bold};
 `
 
-export const HeaderText = styled(BaseText)`
-  font-size: ${(p) => p.theme.size.header};
+export const ExtraBoldText = styled(BaseText)`
+  font-weight: ${(p) => p.theme.weight.extraBold};
+`
+
+export const SmallText = styled(BaseText)`
+  font-size: ${(p) => p.theme.size.small};
+`
+
+export const LargeText = styled(BaseText)`
+  font-size: ${(p) => p.theme.size.large};
 `
 
 export const H1Text = styled(BaseText)`

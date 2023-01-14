@@ -70,5 +70,5 @@ const Menu = styled(Row)`
   padding: 20px;
   opacity: 0.9;
   border-radius: 4px;
-  background-color: ${(p) => p.theme.color.black1};
+  background-color: ${(p) => p.theme.color.black};
 `

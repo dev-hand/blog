@@ -10,8 +10,8 @@ const MdEditorPreview: React.FC<{
   <MdEditor.Markdown
     source={source}
     style={{
-      backgroundColor: theme.color.background,
-      color: theme.color.black1,
+      backgroundColor: theme.color.background1,
+      color: theme.color.black,
     }}
   />
 )

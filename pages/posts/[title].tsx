@@ -5,7 +5,7 @@ import { prefix } from 'infra/config'
 import { contentFormat, layoutFormat } from 'utils/format'
 import { Frame } from 'components/common/frame'
 import { Column } from 'styles/components/common/layout'
-import { BaseText, HeaderText } from 'styles/components/common/text'
+import { BaseText, H1Text } from 'styles/components/common/text'
 import { Media } from 'styles/components/common/layout'
 import { theme } from 'styles/theme'
 import moment from 'moment'
@@ -42,11 +42,11 @@ const Posts: NextPage<{ data: string }> = ({ data }) => {
   const date = layoutFormat('date', data)
   return (
     <Frame>
-      <Column style={{ backgroundColor: theme.color.background }}>
+      <Column style={{ backgroundColor: theme.color.background1 }}>
         <Media>
           <Column style={{ alignItems: 'center', gap: 40, padding: '40px 0' }}>
             <Column style={{ alignItems: 'center' }}>
-              <HeaderText fontFamily='L'>{title}</HeaderText>
+              <H1Text fontFamily='L'>{title}</H1Text>
               <BaseText
                 style={{
                   color: theme.color.gray3,

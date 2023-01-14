@@ -12,6 +12,10 @@ export const Row = styled.div`
   flex-direction: row;
 `
 
+export const Grid = styled.div`
+  display: grid;
+`
+
 export const Media = styled.div`
   ${(p) => p.theme.media.desktop} {
     width: 1060px;
