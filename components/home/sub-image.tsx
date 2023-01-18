@@ -3,9 +3,9 @@ import {
   BackgroundContainer,
   BackgroundImage,
   BackgroundWrapper,
-} from 'styles/components/home/image'
-import { Column } from 'styles/components/common/layout'
-import { DescText, H2Text } from 'styles/components/common/text'
+} from 'components/common/image'
+import { Column } from 'components/common/layout'
+import { DescText, H2Text } from 'components/common/text'
 import { theme } from 'styles/theme'
 
 interface SubItemProps {

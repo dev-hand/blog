@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { prefix } from 'infra/config'
-import { Column } from 'styles/components/common/layout'
+import { Column } from 'components/common/layout'
 
 export const BackgroundContainer = styled(Column)`
   :hover .backgroundWrapper {

@@ -4,14 +4,9 @@ import {
   BackgroundContainer,
   BackgroundImage,
   BackgroundWrapper,
-} from 'styles/components/home/image'
-import { Column } from 'styles/components/common/layout'
-import {
-  BaseText,
-  DescText,
-  H3Text,
-  H5Text,
-} from 'styles/components/common/text'
+} from 'components/common/image'
+import { Column } from 'components/common/layout'
+import { BaseText, DescText, H3Text, H5Text } from 'components/common/text'
 import { theme } from 'styles/theme'
 import Link from 'next/link'
 import { layoutFormat, thumbnailFormat } from 'utils/format'

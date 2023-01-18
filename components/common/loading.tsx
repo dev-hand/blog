@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Column, Row } from 'styles/components/common/layout'
+import { Column, Row } from 'components/common/layout'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { theme } from 'styles/theme'
 

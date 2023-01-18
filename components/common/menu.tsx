@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Column, Row } from 'styles/components/common/layout'
-import { BaseText, H5Text } from 'styles/components/common/text'
+import { Column, Row } from 'components/common/layout'
+import { BaseText, H5Text } from 'components/common/text'
 import { theme } from 'styles/theme'
 
 export const MenuExtends: React.FC = () => {
