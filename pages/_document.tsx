@@ -1,3 +1,4 @@
+import { prefix } from 'infra/config'
 import Document, {
   Html,
   Head,
@@ -32,6 +33,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name='description' content='dev, note, daily' />
+          <link rel='icon' href={`${prefix}/images/icon.png`} />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link

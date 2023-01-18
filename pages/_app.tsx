@@ -13,8 +13,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>dev, note, daily</title>
-        <meta name='description' content='dev, note, daily' />
-        <link rel='icon' href={`${prefix}/images/icon.png`} />
       </Head>
       <PortfolioProvider value={prefix}>
         <ThemeProvider theme={theme}>
