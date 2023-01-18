@@ -11,6 +11,10 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    loader: 'imgix',
+    path: ['https://devshon.github.io/blog'],
+  },
 }
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

@@ -16,6 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home: NextPage<{ data: string[] }> = ({ data }) => {
+  console.log(data)
   return <Frame>Home</Frame>
 }
 

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Column, Grid } from 'components/common/layout'
 import Image from 'next/image'
-import { prefix } from 'infra/config'
 
 const images = [
   '/images/item-1.jpeg',
@@ -25,7 +24,6 @@ export const AboutPhotoList: React.FC = () => {
               height={0}
               layout='responsive'
               objectFit='cover'
-              objectPosition='50% 50%'
             />
           </ImageWrapper>
         ))}
