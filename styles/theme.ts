@@ -19,7 +19,7 @@ const size = {
 }
 
 const color = {
-  primary: '#513DE8',
+  primary: '#316179',
   white: '#FFFFFF',
   black: '#000000',
   gray1: '#444444',
