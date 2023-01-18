@@ -24,6 +24,7 @@ export const AboutPhotoList: React.FC = () => {
               height={0}
               layout='responsive'
               objectFit='cover'
+              priority
             />
           </ImageWrapper>
         ))}
@@ -39,7 +40,7 @@ const Container = styled(Column)`
   background-color: ${(p) => p.theme.color.primary};
 `
 
-const ImageWrapper = styled(Column)`
+const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;

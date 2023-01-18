@@ -17,6 +17,7 @@ export const AboutMySelf: React.FC<{ data: string }> = ({ data }) => {
           height={0}
           layout='responsive'
           objectFit='cover'
+          priority
         />
       </ImageWrapper>
       <PreviewContainer>
@@ -51,7 +52,7 @@ const Container = styled(Row)`
   background-color: ${(p) => p.theme.color.background1};
 `
 
-const ImageWrapper = styled(Column)`
+const ImageWrapper = styled.div`
   ${(p) => p.theme.media.desktop} {
     flex: 1;
     width: 100%;
