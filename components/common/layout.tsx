@@ -17,11 +17,11 @@ export const Grid = styled.div`
 `
 
 export const Media = styled.div`
-  ${(p) => p.theme.media.desktop} {
+  @media ${(p) => p.theme.media.desktop} {
     width: 1060px;
     margin: 0 auto;
   }
-  ${(p) => p.theme.media.mobile} {
+  @media ${(p) => p.theme.media.mobile} {
     padding: 0 20px;
   }
 `

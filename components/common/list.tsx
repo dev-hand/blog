@@ -1,6 +1,6 @@
 import React from 'react'
 import { Column, Row } from 'components/common/layout'
-import { PostItem } from 'components/home/post-item'
+import { PostItem } from 'components/_home/post-item'
 
 export const PostList: React.FC<{ data: string[] }> = ({ data }) => {
   const list: string[][] = [[], [], []]

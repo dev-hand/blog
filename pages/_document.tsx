@@ -33,8 +33,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name='description' content='dev, note, daily' />
-          <link rel='icon' href={`${prefix}/images/icon.png`} />
+          <meta name='description' content='many things' />
+          <link rel='icon' href={`${prefix}/icons/profile.svg`} />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link

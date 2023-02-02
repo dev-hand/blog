@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import { Preview } from 'components/common/editor'
+import { Preview } from 'components/common/preview'
 import { prefix } from 'infra/config'
 import { contentFormat, layoutFormat } from 'utils/format'
 import { Frame } from 'components/common/frame'
@@ -46,7 +46,7 @@ const Posts: NextPage<{ data: string }> = ({ data }) => {
         <Media>
           <Column style={{ alignItems: 'center', gap: 40, padding: '40px 0' }}>
             <Column style={{ alignItems: 'center' }}>
-              <H1Text fontFamily='L'>{title}</H1Text>
+              <H1Text>{title}</H1Text>
               <BaseText
                 style={{
                   color: theme.color.gray3,

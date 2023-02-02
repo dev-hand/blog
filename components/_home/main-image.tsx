@@ -19,7 +19,6 @@ export const MainImage: React.FC<MainItemProps> = ({ url, title, subject }) => {
     <BackgroundContainer style={{ width: 660, height: 500 }}>
       <Column style={{ padding: 20, height: '100%', justifyContent: 'end' }}>
         <H1Text
-          fontFamily='L'
           style={{
             zIndex: 1,
             color: theme.color.white,

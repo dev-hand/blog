@@ -1,51 +1,72 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Column, Grid, Row } from 'components/common/layout'
-import { H4Text, LargeText } from 'components/common/text'
-import { theme } from 'styles/theme'
+import { Column, Row } from 'components/common/layout'
+import { ExtraBoldText, H4Text } from 'components/common/text'
+import { FiLoader } from 'react-icons/fi'
 
 export const AboutIntro: React.FC = () => {
   return (
-    <Container>
-      <MainText>숲을보는,</MainText>
-      <TextContainer>
-        <MainText>개발자.</MainText>
-        <Grid style={{ gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
-          <H4Text color={theme.color.white}>#캠핑</H4Text>
-          <H4Text color={theme.color.white}>#운동</H4Text>
-          <H4Text color={theme.color.white}>#코딩</H4Text>
-          <H4Text color={theme.color.white}>#여행</H4Text>
-          <H4Text color={theme.color.white}>#전시</H4Text>
-          <H4Text color={theme.color.white}>#사진</H4Text>
-        </Grid>
-      </TextContainer>
-    </Container>
+    <Main>
+      <Column>
+        <HeaderWrapper>
+          <HeaderText>Flexible Developer</HeaderText>
+          <LoadingIcon />
+        </HeaderWrapper>
+        <Row>
+          <HeaderText>In Korea.</HeaderText>
+          <HashTagContainer>
+            <HashTagContent>
+              <HashTagText>#NextJS</HashTagText>
+              <HashTagText>#SWR</HashTagText>
+              <HashTagText>#MobX</HashTagText>
+            </HashTagContent>
+            <HashTagContent>
+              <HashTagText>#NodeJS</HashTagText>
+              <HashTagText>#Prisma</HashTagText>
+              <HashTagText>#MySQL</HashTagText>
+            </HashTagContent>
+          </HashTagContainer>
+        </Row>
+      </Column>
+    </Main>
   )
 }
 
-const TextContainer = styled(Row)`
-  ${(p) => p.theme.media.mobile} {
-    flex-direction: column;
-    align-items: flex-start;
+const HeaderWrapper = styled(Row)`
+  gap: 10px;
+`
+const HashTagContent = styled(Column)`
+  gap: 10px;
+`
+
+const LoadingIcon = styled(FiLoader).attrs({ size: 24 })`
+  @keyframes spin {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
-  gap: 50px;
+  animation: spin infinite 2s ease-in-out;
+`
+
+const Main = styled(Row)`
+  height: 600px;
   align-items: center;
+  padding: 0 80px;
 `
 
-const Container = styled(Column)`
-  ${(p) => p.theme.media.desktop} {
-    height: calc(100vh - 85px);
-    align-items: center;
-  }
-  ${(p) => p.theme.media.mobile} {
-    padding: 60px 20px;
-    align-items: flex-start;
-  }
-  justify-content: center;
-  background-color: ${(p) => p.theme.color.black};
+const HashTagContainer = styled(Row)`
+  padding-top: 50px;
+  padding-left: 50px;
+  gap: 20px;
 `
 
-const MainText = styled(LargeText)`
-  color: ${(p) => p.theme.color.white};
-  font-weight: ${(p) => p.theme.weight.bold};
+const HashTagText = styled(H4Text)`
+  font-weight: ${(p) => p.theme.weight.extraBold};
+`
+
+const HeaderText = styled(ExtraBoldText)`
+  font-size: 4.5rem;
 `

@@ -34,10 +34,9 @@ export const AboutPhotoList: React.FC = () => {
 }
 
 const Container = styled(Column)`
-  ${(p) => p.theme.media.desktop} {
+  @media ${(p) => p.theme.media.desktop} {
     padding: 60px;
   }
-  background-color: ${(p) => p.theme.color.primary};
 `
 
 const ImageWrapper = styled.div`
@@ -47,11 +46,11 @@ const ImageWrapper = styled.div`
 `
 
 const ImageContainer = styled(Grid)`
-  ${(p) => p.theme.media.desktop} {
+  @media ${(p) => p.theme.media.desktop} {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
   }
-  ${(p) => p.theme.media.mobile} {
+  @media ${(p) => p.theme.media.mobile} {
     grid-template-columns: repeat(1, 1fr);
   }
 `

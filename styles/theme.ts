@@ -8,9 +8,8 @@ const weight = {
 }
 
 const size = {
-  small: '0.875rem', // 14px
+  small: '0.8125rem', // 13px
   default: '1rem', // 16px
-  large: '8rem', // 128px
   h5: '1.125rem', // 18px
   h4: '1.375rem', // 22px
   h3: '1.625rem', // 26px
@@ -19,7 +18,6 @@ const size = {
 }
 
 const color = {
-  primary: '#316179',
   white: '#FFFFFF',
   black: '#000000',
   gray1: '#444444',
@@ -31,8 +29,8 @@ const color = {
 }
 
 const media = {
-  desktop: '@media (min-width: 1080px)',
-  mobile: '@media (max-width: 1079px)',
+  desktop: '(min-width: 1080px)',
+  mobile: '(max-width: 1079px)',
 }
 
 export const theme = {

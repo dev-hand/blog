@@ -19,7 +19,6 @@ export const SubImage: React.FC<SubItemProps> = ({ url, title, subject }) => {
     <BackgroundContainer style={{ width: 400, height: 250 }}>
       <Column style={{ padding: 20, height: '100%', justifyContent: 'end' }}>
         <H2Text
-          fontFamily='L'
           style={{
             zIndex: 1,
             color: theme.color.white,
