@@ -1,72 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
+import Image from 'next/image'
 import { Column, Row } from 'components/common/layout'
-import { ExtraBoldText, H4Text } from 'components/common/text'
-import { FiLoader } from 'react-icons/fi'
 
 export const AboutIntro: React.FC = () => {
   return (
     <Main>
-      <Column>
-        <HeaderWrapper>
-          <HeaderText>Flexible Developer</HeaderText>
-          <LoadingIcon />
-        </HeaderWrapper>
-        <Row>
-          <HeaderText>In Korea.</HeaderText>
-          <HashTagContainer>
-            <HashTagContent>
-              <HashTagText>#NextJS</HashTagText>
-              <HashTagText>#SWR</HashTagText>
-              <HashTagText>#MobX</HashTagText>
-            </HashTagContent>
-            <HashTagContent>
-              <HashTagText>#NodeJS</HashTagText>
-              <HashTagText>#Prisma</HashTagText>
-              <HashTagText>#MySQL</HashTagText>
-            </HashTagContent>
-          </HashTagContainer>
-        </Row>
-      </Column>
+      <ImageContainer>
+        <Image
+          src='/images/item-1.jpeg'
+          width={729}
+          height={800}
+          alt='universe'
+        />
+      </ImageContainer>
+      <IntroContainer></IntroContainer>
     </Main>
   )
 }
 
-const HeaderWrapper = styled(Row)`
-  gap: 10px;
-`
-const HashTagContent = styled(Column)`
-  gap: 10px;
-`
-
-const LoadingIcon = styled(FiLoader).attrs({ size: 24 })`
-  @keyframes spin {
-    0% {
-      transform: rotate(180deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-  animation: spin infinite 2s ease-in-out;
-`
-
 const Main = styled(Row)`
-  height: 600px;
-  align-items: center;
-  padding: 0 80px;
+  height: 800px;
 `
 
-const HashTagContainer = styled(Row)`
-  padding-top: 50px;
-  padding-left: 50px;
-  gap: 20px;
+const ImageContainer = styled(Column)`
+  flex: 1;
 `
-
-const HashTagText = styled(H4Text)`
-  font-weight: ${(p) => p.theme.weight.extraBold};
-`
-
-const HeaderText = styled(ExtraBoldText)`
-  font-size: 4.5rem;
+const IntroContainer = styled(Column)`
+  flex: 1;
+  padding: 40px 80px;
+  background-color: ${(p) => p.theme.color.black};
 `

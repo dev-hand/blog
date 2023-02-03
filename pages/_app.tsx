@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>dev, note, daily</title>
+        <title>Many things</title>
       </Head>
       <PortfolioProvider value={prefix}>
         <ThemeProvider theme={theme}>
