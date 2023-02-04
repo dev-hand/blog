@@ -32,7 +32,7 @@ export const SubImage: React.FC<SubItemProps> = ({ url, title, subject }) => {
         </DescText>
       </Column>
       <BackgroundWrapper>
-        <BackgroundImage url={url} style={{ width: 400, height: 250 }} />
+        <BackgroundImage src={url} style={{ width: 400, height: 250 }} />
       </BackgroundWrapper>
     </BackgroundContainer>
   )

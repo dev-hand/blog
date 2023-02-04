@@ -6,14 +6,17 @@ import { H4Text } from 'components/common/text'
 
 export const Header: React.FC = () => {
   return (
-    <HeaderContainer>
+    <Main>
       <HeaderText>Many things</HeaderText>
       <FiMenu size={24} style={{ cursor: 'pointer' }} />
-    </HeaderContainer>
+    </Main>
   )
 }
 
-const HeaderContainer = styled(Row)`
+const Main = styled(Row)`
+  @media ${(p) => p.theme.media.mobile} {
+    padding: 40px;
+  }
   padding: 40px 80px;
   align-items: center;
   justify-content: space-between;

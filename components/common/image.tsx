@@ -18,8 +18,8 @@ export const BackgroundWrapper = styled(Column).attrs(() => ({
   cursor: pointer;
 `
 
-export const BackgroundImage = styled.div<{ url: string }>`
-  background-image: url(${(p) => prefix + p.url});
+export const BackgroundImage = styled.div<{ src: string }>`
+  background-image: url(${(p) => prefix + p.src});
   background-size: cover;
   background-position: center;
 `

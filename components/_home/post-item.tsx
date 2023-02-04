@@ -38,7 +38,7 @@ export const PostItem: React.FC<{ item: string }> = ({ item }) => {
               </H5Text>
             </Column>
             <CoverImageWrapper>
-              <CoverImage className='coverImage' url={`/images/${thumbnail}`} />
+              <CoverImage className='coverImage' src={`/images/${thumbnail}`} />
             </CoverImageWrapper>
           </BackgroundContainer>
         )}
