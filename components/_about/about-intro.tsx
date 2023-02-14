@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Column, Grid, Row } from 'components/common/layout'
-import { H1Text, H4Text } from 'components/common/text'
+import { Column, Grid, Row } from 'components/common/Layout'
+import { H1Text, H4Text } from 'components/common/Text'
 import { theme } from 'styles/theme'
 
 export const AboutIntro: React.FC = () => {

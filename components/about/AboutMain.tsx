@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Column, Row } from 'components/common/layout'
-import { ExtraBoldText, H5Text } from 'components/common/text'
+import { Column, Row } from 'components/common/Layout'
+import { ExtraBoldText, H5Text } from 'components/common/Text'
 import { FiLoader } from 'react-icons/fi'
 import { prefix } from 'infra/config'
 

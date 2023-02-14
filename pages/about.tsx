@@ -1,9 +1,9 @@
 import React from 'react'
 import { NextPage } from 'next'
-import { Frame } from 'components/common/frame'
-import { AboutMain } from 'components/about/about-main'
-import { AboutIntro } from 'components/about/about-intro'
-import { AboutPhotos } from 'components/about/about-photos'
+import { Frame } from 'components/common/Frame'
+import { AboutMain } from 'components/about/AboutMain'
+import { AboutIntro } from 'components/about/AboutIntro'
+import { AboutPhotos } from 'components/about/AboutPhotos'
 
 const About: NextPage = () => {
   return (

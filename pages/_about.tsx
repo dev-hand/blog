@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetStaticProps, NextPage } from 'next'
-import { Frame } from 'components/common/frame'
+import { Frame } from 'components/common/Frame'
 import { AboutIntro } from 'components/_about/about-intro'
 import { AboutMySelf } from 'components/_about/about-my-self'
 import { prefix } from 'infra/config'

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Column, Grid } from 'components/common/layout'
+import { Column, Grid } from 'components/common/Layout'
 import Image from 'next/image'
 
 const images = [

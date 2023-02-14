@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Column } from 'components/common/layout'
+import { Column } from 'components/common/Layout'
 import { AiOutlineArrowUp } from 'react-icons/ai'
 
 export const Float: React.FC = () => {

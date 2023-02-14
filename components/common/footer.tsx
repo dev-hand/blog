@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row } from 'components/common/layout'
-import { BaseText } from 'components/common/text'
+import { Row } from 'components/common/Layout'
+import { BaseText } from 'components/common/Text'
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<{ backgroundColor: 'white' | 'black' }> = ({
+  backgroundColor,
+}) => {
   return (
-    <Main>
+    <Main backgroundColor={backgroundColor}>
       <FooterText>Contact By.</FooterText>
       <FooterText>Resume</FooterText>
       <FooterText>Velog</FooterText>
@@ -28,7 +30,7 @@ const FooterText = styled(BaseText)`
   }
 `
 
-const Main = styled(Row)`
+const Main = styled(Row)<{ backgroundColor: 'white' | 'black' }>`
   @media ${(p) => p.theme.media.desktop} {
     gap: 60px;
   }
@@ -39,4 +41,7 @@ const Main = styled(Row)`
   height: 60px;
   align-items: center;
   padding: 0 80px;
+  span {
+    ${(p) => p.backgroundColor === 'black' && `color: ${p.theme.color.white};`}
+  }
 `

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { Column, Row } from 'components/common/layout'
-import { BackgroundImage } from 'components/common/image'
-import { DescText, H2Text } from 'components/common/text'
+import { Column, Row } from 'components/common/Layout'
+import { BackgroundImage } from 'components/common/Image'
+import { DescText, H2Text } from 'components/common/Text'
 
 export const AboutIntro: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -137,7 +137,7 @@ const Main = styled(Row)`
     gap: 20px;
   }
   padding: 40px;
-  background-color: ${(p) => p.theme.color.black};
+  background-color: ${(p) => p.theme.color.background2};
 `
 
 const ImageWrapper = styled(Column)`

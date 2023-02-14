@@ -1,8 +1,9 @@
 import React from 'react'
 import type { GetStaticProps, NextPage } from 'next'
-import { Frame } from 'components/common/frame'
+import { Frame } from 'components/common/Frame'
 import { prefix } from 'infra/config'
 import { posts } from 'public/posts'
+import { PostList } from 'components/home/PostList'
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await Promise.all(
@@ -16,8 +17,11 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home: NextPage<{ data: string[] }> = ({ data }) => {
-  console.log(data)
-  return <Frame>Home</Frame>
+  return (
+    <Frame backgroundColor='black'>
+      <PostList data={data} />
+    </Frame>
+  )
 }
 
 export default Home

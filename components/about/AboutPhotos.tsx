@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Column, Grid } from 'components/common/layout'
-import { ExtraBoldText } from 'components/common/text'
+import { Column, Grid } from 'components/common/Layout'
+import { ExtraBoldText } from 'components/common/Text'
 import Image from 'next/image'
 
 const images = [
@@ -52,6 +52,7 @@ const MainText = styled(ExtraBoldText)`
   }
   font-size: 72px;
   text-align: center;
+  text-decoration: underline;
 `
 
 const Main = styled(Column)`

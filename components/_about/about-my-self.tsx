@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Column, Row } from 'components/common/layout'
-import { Preview } from 'components/common/preview'
+import { Column, Row } from 'components/common/Layout'
+import { Preview } from 'components/common/Preview'
 import { contentFormat } from 'utils/format'
 import Image from 'next/image'
 
