@@ -5,12 +5,13 @@ import { Column } from 'components/common/Layout'
 import { FiMenu } from 'react-icons/fi'
 import { theme } from 'styles/theme'
 import { useRouter } from 'next/router'
+import { prefix } from 'infra/config'
 
 export const Menu: React.FC<{ onMenuClick: () => void }> = ({
   onMenuClick,
 }) => {
   const router = useRouter()
-  console.log(router)
+
   return (
     <Main>
       <FiMenu
@@ -20,14 +21,14 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
         onClick={onMenuClick}
       />
       <BoldText
-        className={router.pathname === '/about' ? 'currentPage' : ''}
-        onClick={() => router.push('/about')}
+        className={router.pathname === `${prefix}/about` ? 'currentPage' : ''}
+        onClick={() => router.push(`${prefix}/about`)}
       >
         About
       </BoldText>
       <BoldText
-        className={router.pathname === '/' ? 'currentPage' : ''}
-        onClick={() => router.push('/')}
+        className={router.pathname === `${prefix}/` ? 'currentPage' : ''}
+        onClick={() => router.push(`${prefix}/`)}
       >
         Home
       </BoldText>
