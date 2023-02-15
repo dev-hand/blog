@@ -136,7 +136,6 @@ const Main = styled(Row)`
     flex-direction: column;
     gap: 20px;
   }
-  padding: 40px;
   background-color: ${(p) => p.theme.color.background2};
 `
 
@@ -145,7 +144,10 @@ const ImageWrapper = styled(Column)`
 `
 
 const IntroContainer = styled(Column)`
+  @media ${(p) => p.theme.media.mobile} {
+    padding: 20px;
+  }
   flex: 1;
   gap: 20px;
-  justify-content: center;
+  padding: 40px 0;
 `

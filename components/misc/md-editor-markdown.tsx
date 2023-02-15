@@ -1,19 +1,19 @@
 import '@uiw/react-md-editor/markdown-editor.css'
 import '@uiw/react-markdown-preview/markdown.css'
 import React from 'react'
+import styled from 'styled-components'
 import MdEditor from '@uiw/react-md-editor'
-import { theme } from 'styles/theme'
 
 const MdEditorPreview: React.FC<{
   source: string
-}> = ({ source }) => (
-  <MdEditor.Markdown
-    source={source}
-    style={{
-      backgroundColor: theme.color.background1,
-      color: theme.color.black,
-    }}
-  />
-)
+}> = ({ source }) => <Markdown source={source} />
+
+const Markdown = styled(MdEditor.Markdown)`
+  color: ${(p) => p.theme.color.black};
+  background-color: ${(p) => p.theme.color.white};
+  img {
+    width: 100%;
+  }
+`
 
 export default MdEditorPreview

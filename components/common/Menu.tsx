@@ -20,25 +20,15 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
         style={{ cursor: 'pointer' }}
         onClick={onMenuClick}
       />
-      <BoldText
-        className={router.pathname === `${prefix}/about` ? 'currentPage' : ''}
-        onClick={() => router.push(`${prefix}/about`)}
-      >
-        About
-      </BoldText>
-      <BoldText
-        className={router.pathname === `${prefix}/` ? 'currentPage' : ''}
-        onClick={() => router.push(`${prefix}/`)}
-      >
-        Home
-      </BoldText>
+      <BoldText onClick={() => router.push('/about')}>About</BoldText>
+      <BoldText onClick={() => router.push(`${prefix}/`)}>Home</BoldText>
     </Main>
   )
 }
 
 const Main = styled(Column)`
   @media ${(p) => p.theme.media.mobile} {
-    padding: 40px;
+    padding: 20px;
   }
   z-index: 100;
   top: 0px;
@@ -56,12 +46,6 @@ const Main = styled(Column)`
     font-size: 72px;
     color: ${(p) => p.theme.color.white};
     cursor: pointer;
-    :hover {
-      text-decoration: underline;
-    }
-  }
-  .currentPage {
-    color: #114d89;
   }
   @keyframes menuFadeIn {
     0% {

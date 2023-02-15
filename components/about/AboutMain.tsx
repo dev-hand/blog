@@ -106,7 +106,7 @@ const LoadingIcon = styled(FiLoader).attrs({ size: 24 })`
 
 const Main = styled(Row)`
   @media ${(p) => p.theme.media.mobile} {
-    padding: 0 40px;
+    padding: 0 20px;
     height: 450px;
   }
   height: 700px;

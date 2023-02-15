@@ -5,14 +5,19 @@ import { FiMenu } from 'react-icons/fi'
 import { H4Text } from 'components/common/Text'
 import { Menu } from 'components/common/Menu'
 import { theme } from 'styles/theme'
+import { useRouter } from 'next/router'
+import { prefix } from 'infra/config'
 
 export const Header: React.FC<{ backgroundColor: 'white' | 'black' }> = ({
   backgroundColor,
 }) => {
+  const router = useRouter()
   const [openMenu, setOpenMenu] = useState(false)
   return (
     <Main backgroundColor={backgroundColor}>
-      <HeaderText>Many things</HeaderText>
+      <HeaderText onClick={() => router.push(`${prefix}/`)}>
+        Many things
+      </HeaderText>
       <FiMenu
         size={24}
         color={
@@ -28,8 +33,11 @@ export const Header: React.FC<{ backgroundColor: 'white' | 'black' }> = ({
 
 const Main = styled(Row)<{ backgroundColor: 'white' | 'black' }>`
   @media ${(p) => p.theme.media.mobile} {
-    padding: 40px;
+    padding: 20px;
   }
+  ${(p) =>
+    p.backgroundColor === 'black' &&
+    `background: linear-gradient(0.25turn, #e66465, #9198e5);`}
   padding: 40px 80px;
   align-items: center;
   justify-content: space-between;

@@ -11,12 +11,17 @@ export const Frame: React.FC<{
   <Main backgroundColor={backgroundColor}>
     <Header backgroundColor={backgroundColor} />
     {children}
-    <Footer backgroundColor={backgroundColor} />
+    <Footer />
   </Main>
 )
 
 const Main = styled(Column)<{ backgroundColor: 'white' | 'black' }>`
   min-height: 100vh;
+  animation: frameFadeIn 1s 1 ease;
+  background-color: ${(p) =>
+    p.backgroundColor === 'white'
+      ? p.theme.color.white
+      : p.theme.color.background2};
   @keyframes frameFadeIn {
     0% {
       opacity: 0;
@@ -25,9 +30,4 @@ const Main = styled(Column)<{ backgroundColor: 'white' | 'black' }>`
       opacity: 1;
     }
   }
-  animation: frameFadeIn 1s 1 ease;
-  background-color: ${(p) =>
-    p.backgroundColor === 'white'
-      ? p.theme.color.white
-      : p.theme.color.background2};
 `

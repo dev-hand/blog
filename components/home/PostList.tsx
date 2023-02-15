@@ -17,15 +17,15 @@ export const PostList: React.FC<{ data: string[] }> = ({ data }) => {
 
 const Main = styled(Row)`
   @media ${(p) => p.theme.media.mobile} {
-    padding: 40px 16px;
+    padding: 40px 20px;
   }
-  padding: 80px;
+  padding: 40px;
 `
 
 const PostContainer = styled(Grid)`
   @media ${(p) => p.theme.media.mobile} {
     grid-template-columns: repeat(1, 1fr);
-    gap: 80px;
+    gap: 40px;
   }
   gap: 40px;
   width: 100%;
