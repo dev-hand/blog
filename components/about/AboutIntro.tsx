@@ -21,67 +21,74 @@ export const AboutIntro: React.FC = () => {
         <IntroImage src='/images/universe.jpeg' />
       </ImageWrapper>
       <IntroContainer ref={observingTarget}>
-        {isVisible && (
-          <>
-            <IntroTitleText>
-              저의 블로그를 방문해주셔서 감사합니다.
-            </IntroTitleText>
-            <Column>
-              <IntroSubText className='intro'>
-                제 블로그 many things는 말 그대로 많은 것들을 저장하는
-                공간입니다.
-              </IntroSubText>
-              <IntroSubText className='intro'>
-                개발, 회고, 사진 등의 경험을 작성해두는 공간입니다.
-              </IntroSubText>
-              <IntroSubText className='intro'>
-                개발은 저에게 취미이자 일이고 지금 보시는 사이트는 직접 코드로
-                만들어 배포했습니다.
-              </IntroSubText>
-              <br />
-              <IntroSubText className='howToWork'>
-                지금까지 일을 하면서 프로젝트 성공을 위한 모든 과정에
-                참여했습니다.
-              </IntroSubText>
-              <IntroSubText className='howToWork'>
-                기획, 사용자의 니즈를 탐색하여 문제를 정의하고 솔루션을 기획으로
-                만듭니다.
-              </IntroSubText>
-              <IntroSubText className='howToWork'>
-                설계, 필요한 도구를 모으고 모델 설계와 개발 공수를 산정하여
-                타임라인을 만듭니다.
-              </IntroSubText>
-              <IntroSubText className='howToWork'>
-                디자인, 사용자 경험에 집중한 심플한 초기 모델을 디자인 합니다.
-              </IntroSubText>
-              <IntroSubText className='howToWork'>
-                개발, 일관성있는 코드를 사용하고 종속성 낮추고 가독성/독립성
-                높은 코드를 만듭니다.
-              </IntroSubText>
-              <IntroSubText className='howToWork'>
-                테스트, 사용자 데이터를 측정해서 찾아낸 문제점 기반으로
-                이터레이션 합니다.
-              </IntroSubText>
-            </Column>
-          </>
-        )}
+        <IntroWrapper>
+          {isVisible && (
+            <>
+              <IntroTitleText>
+                저의 블로그를 방문해주셔서 감사합니다.
+              </IntroTitleText>
+              <Column>
+                <IntroSubText className='intro'>
+                  제 블로그 many things는 말 그대로 많은 것들을 저장하는
+                  공간입니다.
+                </IntroSubText>
+                <IntroSubText className='intro'>
+                  개발, 회고, 사진 등의 경험을 작성해두는 공간입니다.
+                </IntroSubText>
+                <IntroSubText className='intro'>
+                  개발은 저에게 취미이자 일이고 지금 보시는 사이트는 직접 코드로
+                  만들어 배포했습니다.
+                </IntroSubText>
+                <br />
+                <IntroSubText className='howToWork'>
+                  지금까지 일을 하면서 프로젝트 성공을 위한 모든 과정에
+                  참여했습니다.
+                </IntroSubText>
+                <IntroSubText className='howToWork'>
+                  기획, 사용자의 니즈를 탐색하여 문제를 정의하고 솔루션을
+                  기획으로 만듭니다.
+                </IntroSubText>
+                <IntroSubText className='howToWork'>
+                  설계, 필요한 도구를 모으고 모델 설계와 개발 공수를 산정하여
+                  타임라인을 만듭니다.
+                </IntroSubText>
+                <IntroSubText className='howToWork'>
+                  디자인, 사용자 경험에 집중한 심플한 초기 모델을 디자인 합니다.
+                </IntroSubText>
+                <IntroSubText className='howToWork'>
+                  개발, 일관성있는 코드를 사용하고 종속성 낮추고 가독성/독립성
+                  높은 코드를 만듭니다.
+                </IntroSubText>
+                <IntroSubText className='howToWork'>
+                  테스트, 사용자 데이터를 측정해서 찾아낸 문제점 기반으로
+                  이터레이션 합니다.
+                </IntroSubText>
+              </Column>
+            </>
+          )}
+        </IntroWrapper>
       </IntroContainer>
     </Main>
   )
 }
 
+const IntroWrapper = styled(Column)`
+  @media ${(p) => p.theme.media.desktop} {
+    width: 400px;
+    margin: auto;
+  }
+  gap: 20px;
+`
+
 const IntroImage = styled(BackgroundImage)`
   @media ${(p) => p.theme.media.mobile} {
-    height: 300px;
+    min-height: 300px;
   }
-  height: 800px;
+  height: 100%;
   width: 100%;
 `
 
 const IntroTitleText = styled(H2Text)`
-  @media ${(p) => p.theme.media.desktop} {
-    padding: 0 80px;
-  }
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.h5};
   }
@@ -102,7 +109,6 @@ const IntroTitleText = styled(H2Text)`
 
 const IntroSubText = styled(DescText)`
   @media ${(p) => p.theme.media.desktop} {
-    padding: 0 80px;
     font-size: ${(p) => p.theme.size.h5};
   }
   @media ${(p) => p.theme.media.mobile} {
@@ -130,11 +136,10 @@ const IntroSubText = styled(DescText)`
 
 const Main = styled(Row)`
   @media ${(p) => p.theme.media.desktop} {
-    height: 800px;
+    min-height: 800px;
   }
   @media ${(p) => p.theme.media.mobile} {
     flex-direction: column;
-    gap: 20px;
   }
   background-color: ${(p) => p.theme.color.background2};
 `
@@ -148,6 +153,5 @@ const IntroContainer = styled(Column)`
     padding: 20px;
   }
   flex: 1;
-  gap: 20px;
   padding: 40px 0;
 `

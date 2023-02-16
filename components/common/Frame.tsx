@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Column } from 'components/common/Layout'
 import { Header } from 'components/common/Header'
 import { Footer } from 'components/common/Footer'
+import { Float } from 'components/common/Float'
 
 export const Frame: React.FC<{
   children: React.ReactNode
@@ -12,6 +13,7 @@ export const Frame: React.FC<{
     <Header backgroundColor={backgroundColor} />
     {children}
     <Footer />
+    <Float />
   </Main>
 )
 

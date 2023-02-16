@@ -55,7 +55,7 @@ const Main = styled(Column)`
   }
   animation: comeUpFloat 0.8s;
   :hover {
-    background-color: ${(p) => p.theme.color.white}88;
+    background-color: ${(p) => p.theme.color.background1};
   }
   :active {
     background-color: ${(p) => p.theme.color.white}00;

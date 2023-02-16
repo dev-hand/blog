@@ -31,7 +31,7 @@ const FooterText = styled(BoldText)`
 const Main = styled(Row)`
   @media ${(p) => p.theme.media.desktop} {
     height: 100px;
-    gap: 140px;
+    gap: 100px;
   }
   @media ${(p) => p.theme.media.mobile} {
     height: 70px;

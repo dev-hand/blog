@@ -11,7 +11,7 @@ export const PostItem: React.FC<{ item: string }> = ({ item }) => {
   const title = layoutFormat('title', item)
   const thumbnail = thumbnailFormat(item)
   return (
-    <Link href={`${prefix}/${title}`}>
+    <Link href={`${prefix}/posts/${title}`}>
       <Main>
         <Image
           src={`/images/${thumbnail}`}

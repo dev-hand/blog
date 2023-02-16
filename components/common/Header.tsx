@@ -48,4 +48,5 @@ const Main = styled(Row)<{ backgroundColor: 'white' | 'black' }>`
 
 const HeaderText = styled(H4Text)`
   font-weight: ${(p) => p.theme.weight.bold};
+  cursor: pointer;
 `

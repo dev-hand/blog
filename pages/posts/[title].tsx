@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import moment from 'moment'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
@@ -8,8 +8,8 @@ import { contentFormat, layoutFormat } from 'utils/format'
 import { Frame } from 'components/common/Frame'
 import { Column, Media } from 'components/common/Layout'
 import { BaseText, ExtraBoldText } from 'components/common/Text'
-import { theme } from 'styles/theme'
 import { posts } from 'public/posts'
+import { useRouter } from 'next/router'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = posts.map((post) => {
@@ -37,34 +37,70 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 const Posts: NextPage<{ data: string }> = ({ data }) => {
+  const router = useRouter()
   const title = layoutFormat('title', data)
   const content = contentFormat(data)
   const date = layoutFormat('date', data)
+  useEffect(() => {
+    router.beforePopState((state) => {
+      state.options.scroll = false
+      return true
+    })
+  }, [router])
   return (
     <Frame>
-      <Column>
+      <Main>
         <Media>
-          <Column style={{ alignItems: 'center', gap: 40, padding: '40px 0' }}>
-            <Column style={{ alignItems: 'center', gap: 10 }}>
+          <Content>
+            <TitleWrapper>
               <MainTitle>{title}</MainTitle>
               <SmallDateText>
                 {moment(date).format('M월 D일, YYYY')}
               </SmallDateText>
-            </Column>
+            </TitleWrapper>
             <Column>
               <Preview source={content} />
             </Column>
-          </Column>
+          </Content>
         </Media>
-      </Column>
+      </Main>
     </Frame>
   )
 }
 
+const Content = styled(Column)`
+  @media ${(p) => p.theme.media.mobile} {
+    gap: 60px;
+  }
+  gap: 100px;
+`
+
+const Main = styled(Column)`
+  @media ${(p) => p.theme.media.mobile} {
+    padding: 60px 0;
+  }
+  padding: 100px 0;
+`
+
+const TitleWrapper = styled(Column)`
+  @media ${(p) => p.theme.media.mobile} {
+    align-items: start;
+  }
+  align-items: center;
+  gap: 10px;
+`
+
 const MainTitle = styled(ExtraBoldText)`
+  @media ${(p) => p.theme.media.mobile} {
+    font-size: ${(p) => p.theme.size.h1};
+  }
   font-size: 72px;
 `
+
 const SmallDateText = styled(BaseText)`
+  @media ${(p) => p.theme.media.mobile} {
+    font-size: ${(p) => p.theme.size.small};
+  }
   color: ${(p) => p.theme.color.gray1};
 `
 export default Posts

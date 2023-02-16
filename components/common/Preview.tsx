@@ -1,7 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 
-const MdEditorMarkdown = dynamic(import('../misc/md-editor-markdown'), {
+const MdEditorMarkdown = dynamic(import('../misc/MdEditorPreview'), {
   ssr: false,
 })
 
