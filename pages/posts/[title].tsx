@@ -87,7 +87,7 @@ const TitleWrapper = styled(Column)`
     align-items: start;
   }
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 `
 
 const MainTitle = styled(ExtraBoldText)`
@@ -101,6 +101,7 @@ const SmallDateText = styled(BaseText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.small};
   }
+  font-weight: ${(p) => p.theme.weight.regular};
   color: ${(p) => p.theme.color.gray1};
 `
 export default Posts

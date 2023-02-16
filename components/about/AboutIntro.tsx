@@ -18,7 +18,7 @@ export const AboutIntro: React.FC = () => {
   return (
     <Main>
       <ImageWrapper>
-        <IntroImage src='/images/universe.jpeg' />
+        <IntroImage src='/images/item-18.jpeg' />
       </ImageWrapper>
       <IntroContainer ref={observingTarget}>
         <IntroWrapper>

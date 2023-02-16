@@ -11,6 +11,8 @@ const images = [
   '/images/item-13.jpeg',
   '/images/item-14.jpeg',
   '/images/item-9.jpeg',
+  '/images/item-2.jpeg',
+  '/images/item-4.jpeg',
 ]
 
 export const AboutPhotos: React.FC = () => {
@@ -50,6 +52,7 @@ const MainText = styled(ExtraBoldText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: 32px;
   }
+  color: ${(p) => p.theme.color.white};
   font-size: 72px;
   text-align: center;
 `

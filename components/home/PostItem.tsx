@@ -30,7 +30,11 @@ export const PostItem: React.FC<{ item: string }> = ({ item }) => {
 
 const Main = styled(Column)`
   gap: 16px;
+  transition: 500ms;
   cursor: pointer;
+  :hover {
+    opacity: 0.4;
+  }
 `
 
 const H5Title = styled(H5Text)`

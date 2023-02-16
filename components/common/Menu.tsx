@@ -20,7 +20,7 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
         style={{ cursor: 'pointer' }}
         onClick={onMenuClick}
       />
-      <BoldText onClick={() => router.push('/about')}>About</BoldText>
+      <BoldText onClick={() => router.push(`${prefix}/about`)}>About</BoldText>
       <BoldText onClick={() => router.push(`${prefix}/`)}>Home</BoldText>
     </Main>
   )

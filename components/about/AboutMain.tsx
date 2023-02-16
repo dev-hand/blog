@@ -138,7 +138,7 @@ const HeaderText = styled(ExtraBoldText)`
     font-size: ${(p) => p.theme.size.h2};
   }
   font-size: 102px;
-  background: url(${prefix + '/images/universe.jpeg'});
+  background: url(${prefix + '/images/item-18.jpeg'});
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
