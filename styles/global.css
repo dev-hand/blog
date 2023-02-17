@@ -6,3 +6,9 @@ body {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+
+.wmde-markdown h1,
+h2,
+h3 {
+  border-bottom: 0 !important;
+}

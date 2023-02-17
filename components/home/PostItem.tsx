@@ -16,10 +16,9 @@ export const PostItem: React.FC<{ item: string }> = ({ item }) => {
         <Image
           src={`/images/${thumbnail}`}
           alt={thumbnail}
-          width={300}
+          width={280}
           height={200}
           layout='responsive'
-          objectFit='cover'
           priority
         />
         <H5Title>{title}</H5Title>

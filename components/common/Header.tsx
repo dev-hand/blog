@@ -35,9 +35,9 @@ const Main = styled(Row)<{ backgroundColor: 'white' | 'black' }>`
   @media ${(p) => p.theme.media.mobile} {
     padding: 20px;
   }
-  ${(p) =>
+  /* ${(p) =>
     p.backgroundColor === 'black' &&
-    `background: linear-gradient(0.25turn, #e66465, #9198e5);`}
+    `background: linear-gradient(0.25turn, #e66465, #9198e5);`} */
   padding: 40px 80px;
   align-items: center;
   justify-content: space-between;

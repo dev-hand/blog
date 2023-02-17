@@ -94,7 +94,7 @@ const MainTitle = styled(ExtraBoldText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.h1};
   }
-  font-size: 72px;
+  font-size: 60px;
 `
 
 const SmallDateText = styled(BaseText)`

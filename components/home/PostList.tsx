@@ -19,7 +19,7 @@ const Main = styled(Row)`
   @media ${(p) => p.theme.media.mobile} {
     padding: 40px 20px;
   }
-  padding: 40px;
+  padding: 100px 40px;
 `
 
 const PostContainer = styled(Grid)`
