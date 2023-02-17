@@ -7,8 +7,9 @@ import { Menu } from 'components/common/Menu'
 import { theme } from 'styles/theme'
 import { useRouter } from 'next/router'
 import { prefix } from 'infra/config'
+import { ThemeColor } from 'infra/type'
 
-export const Header: React.FC<{ backgroundColor: 'white' | 'black' }> = ({
+export const Header: React.FC<{ backgroundColor: ThemeColor }> = ({
   backgroundColor,
 }) => {
   const router = useRouter()
@@ -31,18 +32,16 @@ export const Header: React.FC<{ backgroundColor: 'white' | 'black' }> = ({
   )
 }
 
-const Main = styled(Row)<{ backgroundColor: 'white' | 'black' }>`
+const Main = styled(Row)<{ backgroundColor: ThemeColor }>`
   @media ${(p) => p.theme.media.mobile} {
     padding: 20px;
   }
-  /* ${(p) =>
-    p.backgroundColor === 'black' &&
-    `background: linear-gradient(0.25turn, #e66465, #9198e5);`} */
   padding: 40px 80px;
   align-items: center;
   justify-content: space-between;
   span {
-    ${(p) => p.backgroundColor === 'black' && `color: ${p.theme.color.white};`}
+    ${(p) =>
+      p.backgroundColor === ThemeColor.B && `color: ${p.theme.color.white};`}
   }
 `
 

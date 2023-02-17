@@ -4,11 +4,12 @@ import { Column } from 'components/common/Layout'
 import { Header } from 'components/common/Header'
 import { Footer } from 'components/common/Footer'
 import { Float } from 'components/common/Float'
+import { ThemeColor } from 'infra/type'
 
 export const Frame: React.FC<{
   children: React.ReactNode
-  backgroundColor?: 'white' | 'black'
-}> = ({ children, backgroundColor = 'white' }) => (
+  backgroundColor?: ThemeColor
+}> = ({ children, backgroundColor = ThemeColor.W }) => (
   <Main backgroundColor={backgroundColor}>
     <Header backgroundColor={backgroundColor} />
     {children}
@@ -17,11 +18,11 @@ export const Frame: React.FC<{
   </Main>
 )
 
-const Main = styled(Column)<{ backgroundColor: 'white' | 'black' }>`
+const Main = styled(Column)<{ backgroundColor: ThemeColor }>`
   min-height: 100vh;
   animation: frameFadeIn 1s 1 ease;
   background-color: ${(p) =>
-    p.backgroundColor === 'white'
+    p.backgroundColor === ThemeColor.W
       ? p.theme.color.white
       : p.theme.color.background2};
   @keyframes frameFadeIn {

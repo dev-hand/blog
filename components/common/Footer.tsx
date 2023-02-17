@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
       <FooterText>Resume</FooterText>
       <FooterText>Velog</FooterText>
       <FooterText>Email</FooterText>
-      <FooterText className='date'>@2023</FooterText>
+      <FooterText className='date'>@Devshon</FooterText>
     </Main>
   )
 }
