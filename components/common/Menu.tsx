@@ -5,7 +5,7 @@ import { Column } from 'components/common/Layout'
 import { FiMenu } from 'react-icons/fi'
 import { theme } from 'styles/theme'
 import { useRouter } from 'next/router'
-import { isDev, prefix } from 'infra/config'
+import { prefix } from 'infra/config'
 
 export const Menu: React.FC<{ onMenuClick: () => void }> = ({
   onMenuClick,
