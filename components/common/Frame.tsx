@@ -20,13 +20,16 @@ export const Frame: React.FC<{
 
 const Main = styled(Column)<{ backgroundColor: ThemeColor }>`
   min-height: 100vh;
-  animation: frameFadeIn 1s 1 ease;
+  animation: frameFadeIn 2000ms 1 ease;
   background-color: ${(p) =>
     p.backgroundColor === ThemeColor.W
       ? p.theme.color.white
       : p.theme.color.background2};
   @keyframes frameFadeIn {
     0% {
+      opacity: 0;
+    }
+    20% {
       opacity: 0;
     }
     100% {

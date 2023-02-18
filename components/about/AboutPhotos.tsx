@@ -52,7 +52,6 @@ const MainText = styled(ExtraBoldText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: 32px;
   }
-  color: ${(p) => p.theme.color.white};
   font-size: 72px;
   text-align: center;
 `
@@ -63,11 +62,5 @@ const Main = styled(Column)`
   }
   padding: 50px 0;
   gap: 40px;
-  background: linear-gradient(
-      217deg,
-      rgba(255, 0, 0, 0.8),
-      rgba(255, 0, 0, 0) 70.71%
-    ),
-    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+  background-color: ${(p) => p.theme.color.white};
 `

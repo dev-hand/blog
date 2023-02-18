@@ -5,13 +5,12 @@ import { Column } from 'components/common/Layout'
 import { FiMenu } from 'react-icons/fi'
 import { theme } from 'styles/theme'
 import { useRouter } from 'next/router'
-import { prefix } from 'infra/config'
+import { isDev, prefix } from 'infra/config'
 
 export const Menu: React.FC<{ onMenuClick: () => void }> = ({
   onMenuClick,
 }) => {
   const router = useRouter()
-
   return (
     <Main>
       <FiMenu
@@ -20,8 +19,24 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
         style={{ cursor: 'pointer' }}
         onClick={onMenuClick}
       />
-      <BoldText onClick={() => router.push(`${prefix}/about`)}>About</BoldText>
-      <BoldText onClick={() => router.push(`${prefix}/`)}>Home</BoldText>
+      <BoldText
+        className={
+          router.pathname === (isDev ? `/about` : `${prefix}/about`)
+            ? 'selected'
+            : ''
+        }
+        onClick={() => router.push(`${prefix}/about/`)}
+      >
+        About
+      </BoldText>
+      <BoldText
+        className={
+          router.pathname === (isDev ? `/` : `${prefix}/`) ? 'selected' : ''
+        }
+        onClick={() => router.push(`${prefix}/`)}
+      >
+        Home
+      </BoldText>
     </Main>
   )
 }
@@ -46,6 +61,9 @@ const Main = styled(Column)`
     font-size: 72px;
     color: ${(p) => p.theme.color.white};
     cursor: pointer;
+    &.selected {
+      color: ${(p) => p.theme.color.primary};
+    }
   }
   @keyframes menuFadeIn {
     0% {

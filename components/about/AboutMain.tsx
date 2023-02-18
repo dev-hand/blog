@@ -93,7 +93,7 @@ const HashTagContent = styled(Column)`
 `
 
 const LoadingIcon = styled(FiLoader).attrs({ size: 24 })`
-  @keyframes spin {
+  @keyframes loadingIconSpin {
     0% {
       transform: rotate(180deg);
     }
@@ -101,7 +101,7 @@ const LoadingIcon = styled(FiLoader).attrs({ size: 24 })`
       transform: rotate(0deg);
     }
   }
-  animation: spin infinite 1.5s linear;
+  animation: loadingIconSpin infinite 1.5s linear;
 `
 
 const Main = styled(Row)`
@@ -138,7 +138,8 @@ const HeaderText = styled(ExtraBoldText)`
     font-size: ${(p) => p.theme.size.h2};
   }
   font-size: 102px;
-  background: url(${prefix + '/images/item-18.jpeg'});
+  background: url(${prefix + '/images/item-19.jpg'});
+  background-size: cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

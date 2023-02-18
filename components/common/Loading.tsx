@@ -27,7 +27,7 @@ const Main = styled(Column)`
   align-items: center;
   background-color: ${(p) => p.theme.color.black};
   svg {
-    @keyframes spin {
+    @keyframes loadingSpin {
       0% {
         transform: rotate(0deg);
       }
@@ -36,12 +36,12 @@ const Main = styled(Column)`
       }
     }
 
-    animation: spin 2s infinite ease-in-out;
+    animation: loadingSpin 2s infinite ease-in-out;
   }
 `
 
 const LoadingBar = styled(Row)`
-  @keyframes progress {
+  @keyframes loadingProgress {
     0% {
       width: 0px;
     }
@@ -53,6 +53,6 @@ const LoadingBar = styled(Row)`
   left: 0;
   height: 5px;
   position: absolute;
-  animation: progress 1.5s infinite ease-out;
+  animation: loadingProgress 1.5s infinite ease-out;
   background-color: ${(p) => p.theme.color.white};
 `

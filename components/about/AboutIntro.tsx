@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Column, Row } from 'components/common/Layout'
 import { BackgroundImage } from 'components/common/Image'
 import { DescText, H2Text } from 'components/common/Text'
+import { FadeInFromHalf } from 'components/common/Keyframes'
 
 export const AboutIntro: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -18,7 +19,7 @@ export const AboutIntro: React.FC = () => {
   return (
     <Main>
       <ImageWrapper>
-        <IntroImage src='/images/item-18.jpeg' />
+        <IntroImage src='/images/item-19.jpg' />
       </ImageWrapper>
       <IntroContainer ref={observingTarget}>
         <IntroWrapper>
@@ -107,26 +108,15 @@ const IntroSubText = styled(DescText)`
     font-size: ${(p) => p.theme.size.default};
   }
   &.one {
-    animation: IntroSubTextFadeIn 5s 1 ease;
+    animation: ${FadeInFromHalf} 3000ms 1 ease;
   }
   &.two {
-    animation: IntroSubTextFadeIn 8s 1 ease;
+    animation: ${FadeInFromHalf} 6000ms 1 ease;
   }
   &.three {
-    animation: IntroSubTextFadeIn 11s 1 ease;
+    animation: ${FadeInFromHalf} 9000ms 1 ease;
   }
   color: ${(p) => p.theme.color.white};
-  @keyframes IntroSubTextFadeIn {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `
 
 const Main = styled(Row)`

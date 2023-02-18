@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
       <FooterText>Resume</FooterText>
       <FooterText>Velog</FooterText>
       <FooterText>Email</FooterText>
-      <FooterText className='date'>@Devshon</FooterText>
+      <FooterText className='date'>@DevShon</FooterText>
     </Main>
   )
 }
@@ -39,5 +39,6 @@ const Main = styled(Row)`
   height: 80px;
   align-items: center;
   padding: 0 80px;
-  background-color: ${(p) => p.theme.color.white};
+  color: ${(p) => p.theme.color.white};
+  background-color: ${(p) => p.theme.color.primary};
 `
