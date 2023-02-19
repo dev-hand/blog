@@ -22,41 +22,33 @@ export const AboutIntro: React.FC = () => {
         <IntroImage src='/images/item-20.jpeg' />
       </ImageWrapper>
       <IntroContainer ref={observingTarget}>
-        <IntroWrapper>
-          {isVisible && (
-            <>
-              <IntroTitleText>Welcome!</IntroTitleText>
-              <Column>
-                <IntroSubText className='one'>
-                  {`My blog is a space that contains a lot of things.`}
-                </IntroSubText>
-                <IntroSubText className='one'>
-                  {`You can check development, retrospect, hobbies, etc.`}
-                </IntroSubText>
-                <br />
-                <IntroSubText className='two'>
-                  {`I've participated in all the processes for project success while working so far.`}
-                </IntroSubText>
-                <br />
-                <IntroSubText className='three'>
-                  {`Planning, Explore users' needs, define problems, and create solutions.`}
-                </IntroSubText>
-                <IntroSubText className='three'>
-                  {`Design, Gather the necessary tools and calculate the design and development man-hours of the model to create a timeline.`}
-                </IntroSubText>
-                <IntroSubText className='three'>
-                  {`Design, Design simple early models that focus on user experience.`}
-                </IntroSubText>
-                <IntroSubText className='three'>
-                  {`Development, Use consistent code, reduce dependencies, and create highly readable and independent code.`}
-                </IntroSubText>
-                <IntroSubText className='three'>
-                  {`Test, repeat based on the problem found by measuring the user's data..`}
-                </IntroSubText>
-              </Column>
-            </>
-          )}
-        </IntroWrapper>
+        {isVisible && (
+          <IntroWrapper>
+            <IntroTitleText>Welcome!</IntroTitleText>
+            <Column>
+              <IntroSubText className='one'>
+                {`I've participated in all the processes for project success while working so far.`}
+              </IntroSubText>
+              <br />
+              <IntroSubText className='two'>
+                {`Planning, Explore users' needs, define problems, and create solutions.`}
+              </IntroSubText>
+              <IntroSubText className='two'>
+                {`Layout, Gather the necessary tools and calculate the design and development man-hours of the model to create a timeline.`}
+              </IntroSubText>
+              <br />
+              <IntroSubText className='three'>
+                {`Design, Design simple early models that focus on user experience.`}
+              </IntroSubText>
+              <IntroSubText className='three'>
+                {`Development, Use consistent code, reduce dependencies, and create highly readable and independent code.`}
+              </IntroSubText>
+              <IntroSubText className='three'>
+                {`Test, repeat based on the problem found by measuring the user's data.`}
+              </IntroSubText>
+            </Column>
+          </IntroWrapper>
+        )}
       </IntroContainer>
     </Main>
   )
@@ -137,6 +129,7 @@ const IntroContainer = styled(Column)`
     padding: 40px 20px;
   }
   flex: 1;
+  min-height: 500px;
   padding: 40px 0;
   background-color: ${(p) => p.theme.color.background2};
 `
