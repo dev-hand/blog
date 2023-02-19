@@ -4,7 +4,6 @@ import { Column, Row } from 'components/common/Layout'
 import { BackgroundImage } from 'components/common/Image'
 import { DescText, H2Text } from 'components/common/Text'
 import { FadeInFromHalf } from 'components/common/Keyframes'
-import Image from 'next/image'
 
 export const AboutIntro: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false)
