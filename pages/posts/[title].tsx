@@ -10,6 +10,8 @@ import { Column, Media } from 'components/common/Layout'
 import { BaseText, ExtraBoldText } from 'components/common/Text'
 import { posts } from 'public/posts'
 import { useRouter } from 'next/router'
+import { ThemeColor } from 'infra/type'
+import { theme } from 'styles/theme'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = posts.map((post) => {
@@ -36,7 +38,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 }
 
-const Posts: NextPage<{ data: string }> = ({ data }) => {
+const Post: NextPage<{ data: string }> = ({ data }) => {
   const router = useRouter()
   const title = layoutFormat('title', data)
   const content = contentFormat(data)
@@ -48,7 +50,7 @@ const Posts: NextPage<{ data: string }> = ({ data }) => {
     })
   }, [router])
   return (
-    <Frame>
+    <Frame backgroundColor={ThemeColor.B1}>
       <Main>
         <Media>
           <Content>
@@ -59,7 +61,13 @@ const Posts: NextPage<{ data: string }> = ({ data }) => {
               </SmallDateText>
             </TitleWrapper>
             <Column>
-              <Preview source={content} />
+              <Preview
+                source={content}
+                style={{
+                  backgroundColor: theme.color.background1,
+                  color: theme.color.background2,
+                }}
+              />
             </Column>
           </Content>
         </Media>
@@ -95,6 +103,7 @@ const MainTitle = styled(ExtraBoldText)`
     font-size: ${(p) => p.theme.size.h1};
   }
   font-size: 60px;
+  color: ${(p) => p.theme.color.background2};
 `
 
 const SmallDateText = styled(BaseText)`
@@ -104,4 +113,5 @@ const SmallDateText = styled(BaseText)`
   font-weight: ${(p) => p.theme.weight.regular};
   color: ${(p) => p.theme.color.gray1};
 `
-export default Posts
+
+export default Post

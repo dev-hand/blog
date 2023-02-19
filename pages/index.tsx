@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: NextPage<{ data: string[] }> = ({ data }) => {
   return (
-    <Frame backgroundColor={ThemeColor.B}>
+    <Frame backgroundColor={ThemeColor.B2}>
       <Main>
         <HomeIntro />
         <HomeList data={data} />

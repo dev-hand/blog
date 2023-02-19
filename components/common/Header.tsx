@@ -22,7 +22,9 @@ export const Header: React.FC<{ backgroundColor: ThemeColor }> = ({
       <FiMenu
         size={24}
         color={
-          backgroundColor === 'white' ? theme.color.black : theme.color.white
+          backgroundColor === ThemeColor.W || backgroundColor === ThemeColor.B1
+            ? theme.color.black
+            : theme.color.white
         }
         style={{ cursor: 'pointer' }}
         onClick={() => setOpenMenu(true)}
@@ -36,12 +38,13 @@ const Main = styled(Row)<{ backgroundColor: ThemeColor }>`
   @media ${(p) => p.theme.media.mobile} {
     padding: 20px;
   }
+  z-index: 100;
   padding: 40px 80px;
   align-items: center;
   justify-content: space-between;
   span {
     ${(p) =>
-      p.backgroundColor === ThemeColor.B && `color: ${p.theme.color.white};`}
+      p.backgroundColor === ThemeColor.B2 && `color: ${p.theme.color.white};`}
   }
 `
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Image from 'next/image'
 import { Column, Grid } from 'components/common/Layout'
 import { ExtraBoldText } from 'components/common/Text'
-import Image from 'next/image'
 
 const images = [
   '/images/item-16.jpeg',

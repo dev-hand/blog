@@ -4,6 +4,7 @@ import { Column, Row } from 'components/common/Layout'
 import { BackgroundImage } from 'components/common/Image'
 import { DescText, H2Text } from 'components/common/Text'
 import { FadeInFromHalf } from 'components/common/Keyframes'
+import Image from 'next/image'
 
 export const AboutIntro: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -19,7 +20,7 @@ export const AboutIntro: React.FC = () => {
   return (
     <Main>
       <ImageWrapper>
-        <IntroImage src='/images/item-19.jpg' />
+        <IntroImage src='/images/item-20.jpeg' />
       </ImageWrapper>
       <IntroContainer ref={observingTarget}>
         <IntroWrapper>
@@ -126,7 +127,6 @@ const Main = styled(Row)`
   @media ${(p) => p.theme.media.mobile} {
     flex-direction: column;
   }
-  background-color: ${(p) => p.theme.color.background2};
 `
 
 const ImageWrapper = styled(Column)`
@@ -139,4 +139,5 @@ const IntroContainer = styled(Column)`
   }
   flex: 1;
   padding: 40px 0;
+  background-color: ${(p) => p.theme.color.background2};
 `
