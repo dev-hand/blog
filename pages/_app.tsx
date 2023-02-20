@@ -3,15 +3,11 @@ import 'styles/global.css'
 import React from 'react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'styles/theme'
 import { PortfolioProvider } from 'infra/context'
 import { prefix } from 'infra/config'
-
-const Audio = dynamic(() => import('../components/common/Audio'), {
-  ssr: false,
-})
+import { Audio } from 'components/common/Audio'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,12 +15,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Many things</title>
       </Head>
-      <PortfolioProvider value={prefix}>
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-          <Audio />
-        </ThemeProvider>
-      </PortfolioProvider>
+      {/* <PortfolioProvider value={prefix}> */}
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+        <Audio />
+      </ThemeProvider>
+      {/* </PortfolioProvider> */}
     </>
   )
 }
