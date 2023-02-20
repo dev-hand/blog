@@ -10,7 +10,6 @@ import { prefix } from 'infra/config'
 import { Audio } from 'components/common/Audio'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log(1)
   return (
     <>
       <Head>
