@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { Column, Grid } from 'components/common/Layout'
-import { ExtraBoldText } from 'components/common/Text'
+import { ExtraBoldText, H5Text } from 'components/common/Text'
 
 const images = [
   '/images/item-16.jpeg',
@@ -18,7 +18,18 @@ const images = [
 export const AboutPhotos: React.FC = () => {
   return (
     <Main>
-      <MainText>My Photos</MainText>
+      <TitleContainer>
+        <MainText>Photos</MainText>
+        <Column style={{ gap: 10 }}>
+          <H5DescTitle>
+            I like taking pictures. Because I can take pictures of the
+            atmosphere that I see.
+          </H5DescTitle>
+          <H5DescTitle>
+            I still lack a lot, but I took all the pictures on the site myself.
+          </H5DescTitle>
+        </Column>
+      </TitleContainer>
       <ImageContainer>
         {images.map((src, index) => (
           <Image
@@ -37,6 +48,19 @@ export const AboutPhotos: React.FC = () => {
   )
 }
 
+const H5DescTitle = styled(H5Text)`
+  font-weight: ${(p) => p.theme.weight.light};
+`
+
+const TitleContainer = styled(Column)`
+  @media ${(p) => p.theme.media.mobile} {
+    padding: 0 20px;
+    gap: 20px;
+  }
+  padding: 0 80px;
+  gap: 40px;
+`
+
 const ImageContainer = styled(Grid)`
   @media ${(p) => p.theme.media.desktop} {
     grid-template-columns: repeat(4, 1fr);
@@ -53,7 +77,6 @@ const MainText = styled(ExtraBoldText)`
     font-size: 32px;
   }
   font-size: 72px;
-  text-align: center;
 `
 
 const Main = styled(Column)`

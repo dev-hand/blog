@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from 'styles/theme'
 import { PortfolioProvider } from 'infra/context'
 import { prefix } from 'infra/config'
+import { Audio } from 'components/common/Audio'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <PortfolioProvider value={prefix}>
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
+          <Audio />
         </ThemeProvider>
       </PortfolioProvider>
     </>
