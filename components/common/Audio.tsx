@@ -5,7 +5,7 @@ import { H1Text, H5Text } from 'components/common/Text'
 import { Column } from 'components/common/Layout'
 import { prefix } from 'infra/config'
 
-export const Audio: React.FC = () => {
+const Audio: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [isAudioPlay, setIsAudioPlay] = useState(false)
   const [isCloseBefore, setIsCloseBefore] = useState(false)
@@ -99,3 +99,5 @@ const Main = styled(Column)<{ isCloseBefore: boolean }>`
   align-items: center;
   color: ${(p) => p.theme.color.white};
 `
+
+export default Audio
