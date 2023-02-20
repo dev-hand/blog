@@ -14,7 +14,7 @@ export const Frame: React.FC<{
     <Main backgroundColor={backgroundColor}>
       <Header backgroundColor={backgroundColor} />
       {children}
-      <Footer />
+      <Footer backgroundColor={backgroundColor} />
       <Float />
     </Main>
   )

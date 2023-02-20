@@ -41,7 +41,7 @@ const ImageContainer = styled(Grid)`
   @media ${(p) => p.theme.media.desktop} {
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-    padding: 0 40px;
+    padding: 0 80px;
   }
   @media ${(p) => p.theme.media.mobile} {
     grid-template-columns: repeat(1, 1fr);
@@ -62,5 +62,4 @@ const Main = styled(Column)`
   }
   padding: 50px 0;
   gap: 40px;
-  background-color: ${(p) => p.theme.color.white};
 `
