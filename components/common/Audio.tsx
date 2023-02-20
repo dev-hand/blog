@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Modal } from 'components/common/Modal'
 import { BaseText, H1Text, H5Text } from 'components/common/Text'
 import { Column } from 'components/common/Layout'
+import { prefix } from 'infra/config'
 
 export const Audio: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true)
@@ -31,7 +32,10 @@ export const Audio: React.FC = () => {
         <AudioContainer>
           <DescTitle>Play the music</DescTitle>
           <audio id='player' controls loop onPlay={close}>
-            <source src='/music/CommonSaintsSecretSong.mp3' type='audio/mp3' />
+            <source
+              src={`${prefix}/music/CommonSaintsSecretSong.mp3`}
+              type='audio/mp3'
+            />
           </audio>
         </AudioContainer>
         <CloseText
