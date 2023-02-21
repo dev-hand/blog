@@ -25,7 +25,7 @@ export const Audio: React.FC = () => {
       setIsVisible(false)
       if (newTab) {
         window.open(
-          `${prefix}/${isDev ? router.asPath : router.asPath.slice(5)}`,
+          `${prefix}/${isDev ? router.asPath : router.asPath.slice(6)}`,
           '_blank',
         )
       }
