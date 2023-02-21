@@ -23,7 +23,7 @@ export const Audio: React.FC = () => {
     sessionStorage.setItem('audioPlay', 'false')
     setTimeout(() => {
       setIsVisible(false)
-      window.open(prefix + router.pathname, '_blank')
+      window.open(prefix + router.asPath, '_blank')
     }, 2000)
   }
 
