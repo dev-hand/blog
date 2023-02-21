@@ -1,6 +1,6 @@
 import 'styles/reset.css'
 import 'styles/global.css'
-import React, { Suspense } from 'react'
+import React from 'react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
@@ -17,9 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <PortfolioProvider value={prefix}>
         <ThemeProvider theme={theme}>
-          <Suspense>
-            <Component {...pageProps} />
-          </Suspense>
+          <Component {...pageProps} />
           <Audio />
         </ThemeProvider>
       </PortfolioProvider>

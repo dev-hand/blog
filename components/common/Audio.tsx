@@ -30,23 +30,31 @@ export const Audio: React.FC = () => {
   if (!isAudioPlay) return null
 
   return (
-    <Modal onClose={close} isVisible={isVisible} disableBackgroundClose>
-      <Main isCloseBefore={isCloseBefore}>
-        <H1MainTitle>{`Common Saints - Secret Song`}</H1MainTitle>
-        <AudioContainer>
-          <DescTitle>Play the music</DescTitle>
-          <audio id='player' controls loop onPlay={close}>
-            <source
-              src={`${prefix}/music/CommonSaintsSecretSong.mp3`}
-              type='audio/mp3'
-            />
-          </audio>
-        </AudioContainer>
-        <CloseText onClick={close}>{`No, I won't`}</CloseText>
-      </Main>
-    </Modal>
+    <Main>
+      <Modal onClose={close} isVisible={isVisible} disableBackgroundClose>
+        <Content isCloseBefore={isCloseBefore}>
+          <H1MainTitle>{`Common Saints - Secret Song`}</H1MainTitle>
+          <AudioContainer>
+            <DescTitle>Play the music</DescTitle>
+            <audio id='player' controls loop onPlay={close}>
+              <source
+                src={`${prefix}/music/CommonSaintsSecretSong.mp3`}
+                type='audio/mp3'
+              />
+            </audio>
+          </AudioContainer>
+          <CloseText onClick={close}>{`No, I won't`}</CloseText>
+        </Content>
+      </Modal>
+    </Main>
   )
 }
+
+const Main = styled.div`
+  @media ${(p) => p.theme.media.mobile} {
+    display: none;
+  }
+`
 
 const AudioContainer = styled(Column)`
   gap: 10px;
@@ -76,7 +84,7 @@ const H1MainTitle = styled(H1Text)`
   font-weight: ${(p) => p.theme.weight.extraBold};
 `
 
-const Main = styled(Column)<{ isCloseBefore?: boolean }>`
+const Content = styled(Column)<{ isCloseBefore?: boolean }>`
   @keyframes comeUpAudio {
     0% {
       top: 40%;
