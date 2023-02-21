@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Modal } from 'components/common/Modal'
 import { H1Text, H5Text } from 'components/common/Text'
 import { Column } from 'components/common/Layout'
-import { prefix } from 'infra/config'
+import { isDev, prefix } from 'infra/config'
 import { useRouter } from 'next/router'
 
 export const Audio: React.FC = () => {
@@ -11,7 +11,7 @@ export const Audio: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [isAudioPlay, setIsAudioPlay] = useState(false)
   const [isCloseBefore, setIsCloseBefore] = useState(false)
-  console.log(router.asPath)
+
   useEffect(() => {
     setTimeout(() => {
       if (!sessionStorage.getItem('audioPlay')) setIsAudioPlay(true)
@@ -23,7 +23,10 @@ export const Audio: React.FC = () => {
     sessionStorage.setItem('audioPlay', 'false')
     setTimeout(() => {
       setIsVisible(false)
-      window.open(`${prefix}/${router.asPath}`, '_blank')
+      window.open(
+        `${prefix}/${isDev ? router.asPath : router.asPath.slice(5)}`,
+        '_blank',
+      )
     }, 2000)
   }
 
