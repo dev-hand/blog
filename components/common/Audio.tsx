@@ -18,15 +18,17 @@ export const Audio: React.FC = () => {
     }, 5000)
   }, [])
 
-  const close = () => {
+  const close = (newTab: boolean) => {
     setIsCloseBefore(true)
     sessionStorage.setItem('audioPlay', 'false')
     setTimeout(() => {
       setIsVisible(false)
-      window.open(
-        `${prefix}/${isDev ? router.asPath : router.asPath.slice(5)}`,
-        '_blank',
-      )
+      if (newTab) {
+        window.open(
+          `${prefix}/${isDev ? router.asPath : router.asPath.slice(5)}`,
+          '_blank',
+        )
+      }
     }, 2000)
   }
 
@@ -34,19 +36,19 @@ export const Audio: React.FC = () => {
 
   return (
     <Main>
-      <Modal onClose={close} isVisible={isVisible} disableBackgroundClose>
+      <Modal onClose={() => {}} isVisible={isVisible} disableBackgroundClose>
         <Content isCloseBefore={isCloseBefore}>
           <H1MainTitle>{`Common Saints - Secret Song`}</H1MainTitle>
           <AudioContainer>
             <DescTitle>Play the music</DescTitle>
-            <audio id='player' controls loop onPlay={close}>
+            <audio id='player' controls loop onPlay={() => close(true)}>
               <source
                 src={`${prefix}/music/CommonSaintsSecretSong.mp3`}
                 type='audio/mp3'
               />
             </audio>
           </AudioContainer>
-          <CloseText onClick={close}>{`No, I won't`}</CloseText>
+          <CloseText onClick={() => close(false)}>{`No, I won't`}</CloseText>
         </Content>
       </Modal>
     </Main>
