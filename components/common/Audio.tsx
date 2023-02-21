@@ -4,8 +4,10 @@ import { Modal } from 'components/common/Modal'
 import { H1Text, H5Text } from 'components/common/Text'
 import { Column } from 'components/common/Layout'
 import { prefix } from 'infra/config'
+import { useRouter } from 'next/router'
 
 export const Audio: React.FC = () => {
+  const router = useRouter()
   const [isVisible, setIsVisible] = useState(true)
   const [isAudioPlay, setIsAudioPlay] = useState(false)
   const [isCloseBefore, setIsCloseBefore] = useState(false)
@@ -18,8 +20,11 @@ export const Audio: React.FC = () => {
 
   const close = () => {
     setIsCloseBefore(true)
+    sessionStorage.setItem('audioPlay', 'false')
     setTimeout(() => {
       setIsVisible(false)
+      window.open(prefix + router.pathname, '_blank')
+      router.push(`${prefix}/audio`)
     }, 2000)
   }
 
@@ -38,12 +43,7 @@ export const Audio: React.FC = () => {
             />
           </audio>
         </AudioContainer>
-        <CloseText
-          onClick={() => {
-            close()
-            sessionStorage.setItem('audioPlay', 'false')
-          }}
-        >{`No, I won't`}</CloseText>
+        <CloseText onClick={close}>{`No, I won't`}</CloseText>
       </Main>
     </Modal>
   )
