@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Modal } from 'components/common/Modal'
-import { H1Text, H5Text } from 'components/common/Text'
+import { H1Text, H2Text, H5Text } from 'components/common/Text'
 import { Column } from 'components/common/Layout'
 import { prefix } from 'infra/config'
 import { useRouter } from 'next/router'
@@ -24,7 +24,6 @@ export const Audio: React.FC = () => {
     setTimeout(() => {
       setIsVisible(false)
       window.open(prefix + router.pathname, '_blank')
-      router.push(`${prefix}/audio`)
     }, 2000)
   }
 
@@ -77,7 +76,7 @@ const H1MainTitle = styled(H1Text)`
   font-weight: ${(p) => p.theme.weight.extraBold};
 `
 
-const Main = styled(Column)<{ isCloseBefore: boolean }>`
+const Main = styled(Column)<{ isCloseBefore?: boolean }>`
   @keyframes comeUpAudio {
     0% {
       top: 40%;
