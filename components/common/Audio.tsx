@@ -11,7 +11,7 @@ export const Audio: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [isAudioPlay, setIsAudioPlay] = useState(false)
   const [isCloseBefore, setIsCloseBefore] = useState(false)
-
+  console.log(router.asPath)
   useEffect(() => {
     setTimeout(() => {
       if (!sessionStorage.getItem('audioPlay')) setIsAudioPlay(true)
@@ -23,7 +23,7 @@ export const Audio: React.FC = () => {
     sessionStorage.setItem('audioPlay', 'false')
     setTimeout(() => {
       setIsVisible(false)
-      window.open(prefix + router.asPath, '_blank')
+      window.open(`${prefix}/${router.asPath}`, '_blank')
     }, 2000)
   }
 
