@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Modal } from 'components/common/Modal'
-import { H1Text, H2Text, H5Text } from 'components/common/Text'
+import { H1Text, H5Text } from 'components/common/Text'
 import { Column } from 'components/common/Layout'
 import { prefix } from 'infra/config'
 import { useRouter } from 'next/router'
