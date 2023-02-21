@@ -31,4 +31,5 @@ const Main = styled(Column)`
   color: ${(p) => p.theme.color.white};
   background-color: ${(p) => p.theme.color.background2};
 `
+
 export default Audio
