@@ -23,13 +23,13 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
         className={router.pathname === '/about' ? 'selected' : ''}
         onClick={() => router.push(`${prefix}/about/`)}
       >
-        About
+        about
       </BoldText>
       <BoldText
         className={router.pathname === '/' ? 'selected' : ''}
         onClick={() => router.push(`${prefix}/`)}
       >
-        Home
+        home
       </BoldText>
     </Main>
   )
@@ -52,7 +52,10 @@ const Main = styled(Column)`
   animation: menuFadeIn 600ms 1 ease;
   background-color: ${(p) => p.theme.color.background2};
   span {
-    font-size: 72px;
+    @media ${(p) => p.theme.media.mobile} {
+      font-size: 82px;
+    }
+    font-size: 122px;
     color: ${(p) => p.theme.color.white};
     cursor: pointer;
     &.selected {

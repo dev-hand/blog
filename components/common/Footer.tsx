@@ -10,9 +10,19 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
   return (
     <Main backgroundColor={backgroundColor}>
       <FooterText>Contact By</FooterText>
-      <FooterText>Resume</FooterText>
-      <FooterText>Velog</FooterText>
-      <FooterText>Email</FooterText>
+      <a
+        href='https://florentine-nutmeg-39b.notion.site/SHON-85ae96c1bfd54adf920e45d44e71560c'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <FooterText>Resume</FooterText>
+      </a>
+      <a href='https://devshon.github.io' target='_blank' rel='noreferrer'>
+        <FooterText>Velog</FooterText>
+      </a>
+      <a href='https://github.com/devshon' target='_blank' rel='noreferrer'>
+        <FooterText>Github</FooterText>
+      </a>
       <FooterText className='date'>@DevShon</FooterText>
     </Main>
   )
