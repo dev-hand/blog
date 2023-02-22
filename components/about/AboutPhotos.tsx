@@ -10,7 +10,7 @@ const images = [
   '/images/item-15.jpeg',
   '/images/item-13.jpeg',
   '/images/item-14.jpeg',
-  '/images/item-9.jpeg',
+  '/images/item-8.jpeg',
   '/images/item-2.jpeg',
   '/images/item-4.jpeg',
 ]

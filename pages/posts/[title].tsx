@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const Post: NextPage<{ data: string }> = ({ data }) => {
   const router = useRouter()
   const title = layoutFormat('title', data)
+  const writer = layoutFormat('writer', data)
   const content = contentFormat(data)
   const date = layoutFormat('date', data)
   useEffect(() => {
@@ -56,9 +57,7 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
           <Content>
             <TitleWrapper>
               <MainTitle>{title}</MainTitle>
-              <SmallDateText>
-                {moment(date).format('M월 D일, YYYY')}
-              </SmallDateText>
+              {writer && <SmallText>저자 {writer}</SmallText>}
             </TitleWrapper>
             <Column>
               <Preview
@@ -69,6 +68,7 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
                 }}
               />
             </Column>
+            <ItalicTitle>{moment(date).format('M월 D일, YYYY')}</ItalicTitle>
           </Content>
         </Media>
       </Main>
@@ -106,12 +106,17 @@ const MainTitle = styled(ExtraBoldText)`
   color: ${(p) => p.theme.color.background2};
 `
 
-const SmallDateText = styled(BaseText)`
+const SmallText = styled(BaseText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.small};
   }
   font-weight: ${(p) => p.theme.weight.regular};
   color: ${(p) => p.theme.color.gray1};
+`
+
+const ItalicTitle = styled(SmallText)`
+  font-style: italic;
+  text-align: end;
 `
 
 export default Post

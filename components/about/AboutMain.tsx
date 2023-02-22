@@ -9,11 +9,11 @@ export const AboutMain: React.FC = () => (
   <Main>
     <Container>
       <HeaderWrapper>
-        <HeaderText>Flexible Developer</HeaderText>
+        <HeaderText>Simple is the</HeaderText>
         <LoadingIcon />
       </HeaderWrapper>
       <Row>
-        <HeaderText>In Korea.</HeaderText>
+        <HeaderText>Best</HeaderText>
         <HashTagContainer>
           <HashTagContent>
             <HashTagText>#Typescript</HashTagText>
@@ -46,6 +46,7 @@ const Container = styled(Column)`
     top: 150px;
     animation: mobileAboutMainFadeIn 2s 1 ease;
   }
+  gap: 8px;
   top: 200px;
   position: absolute;
   animation: aboutMainFadeIn 2s 1 ease;

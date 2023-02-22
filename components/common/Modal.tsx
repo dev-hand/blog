@@ -6,7 +6,7 @@ import { FadeIn } from './Keyframes'
 export const Modal: React.FC<{
   children: React.ReactNode
   isVisible: boolean
-  onClose: () => void
+  onClose?: () => void
   disableBackgroundClose?: boolean
 }> = ({ children, isVisible, onClose, disableBackgroundClose }) => (
   <Background
@@ -14,7 +14,7 @@ export const Modal: React.FC<{
     onClick={(e) => {
       if (!disableBackgroundClose) {
         e.stopPropagation()
-        onClose()
+        onClose?.()
       }
     }}
   >

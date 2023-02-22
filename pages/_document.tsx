@@ -34,7 +34,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name='description' content='It contains a lot of things.' />
-          <meta property='og:title' content='Many things' />
+          {/* <meta property='og:title' content='Many things' />
           <meta
             property='og:description'
             content='It contains a lot of things.'
@@ -46,7 +46,7 @@ class MyDocument extends Document {
           <meta
             property='og:image'
             content='https://devshon.github.io/blog/images/KakaoTalk_Photo_2023-02-19-20-21-31.jpeg'
-          />
+          /> */}
           <link rel='icon' href={`${prefix}/icons/profile.svg`} />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
