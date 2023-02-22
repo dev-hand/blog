@@ -57,7 +57,7 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
           <Content>
             <TitleWrapper>
               <MainTitle>{title}</MainTitle>
-              {writer && <SmallText>저자 {writer}</SmallText>}
+              {writer && <SmallText>{writer}</SmallText>}
             </TitleWrapper>
             <Column>
               <Preview
