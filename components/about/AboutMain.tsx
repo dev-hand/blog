@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Column, Row } from 'components/common/Layout'
-import { ExtraBoldText, H5Text } from 'components/common/Text'
+import { ExtraBoldText } from 'components/common/Text'
 import { FiLoader } from 'react-icons/fi'
 import { prefix } from 'infra/config'
 
@@ -9,44 +9,35 @@ export const AboutMain: React.FC = () => (
   <Main>
     <Container>
       <HeaderWrapper>
-        <HeaderText>Simple is the</HeaderText>
+        <HeaderText>
+          Simplicity <span className='desktop'>is the</span>
+        </HeaderText>
         <LoadingIcon />
       </HeaderWrapper>
-      <Row>
-        <HeaderText>Best</HeaderText>
-        <HashTagContainer>
-          <HashTagContent>
-            <HashTagText>#Typescript</HashTagText>
-            <HashTagText>#NextJS</HashTagText>
-            <HashTagText>#MobX</HashTagText>
-            <HashTagText>#SWR</HashTagText>
-            <HashTagText>#ReactNative</HashTagText>
-          </HashTagContent>
-          <HashTagContent>
-            <HashTagText>#NodeJS</HashTagText>
-            <HashTagText>#Prisma</HashTagText>
-            <HashTagText>#MySQL</HashTagText>
-            <HashTagText>#MongoDB</HashTagText>
-            <HashTagText>#AWS</HashTagText>
-          </HashTagContent>
-          <HashTagContent>
-            <HashTagText>#StyledComponent</HashTagText>
-            <HashTagText>#SCSS</HashTagText>
-            <HashTagText>#Figma</HashTagText>
-            <HashTagText>#Notion</HashTagText>
-          </HashTagContent>
-        </HashTagContainer>
-      </Row>
+      <HeaderText>
+        <span className='mobile'>is the</span>
+      </HeaderText>
+      <BottomWrapper>
+        <HeaderText>Ultimate</HeaderText>
+        <HeaderText>Sophistication</HeaderText>
+      </BottomWrapper>
     </Container>
   </Main>
 )
 
+const BottomWrapper = styled(Row)`
+  @media ${(p) => p.theme.media.mobile} {
+    flex-direction: column;
+  }
+  gap: 20px;
+`
+
 const Container = styled(Column)`
   @media ${(p) => p.theme.media.mobile} {
-    top: 150px;
+    top: 100px;
     animation: mobileAboutMainFadeIn 2s 1 ease;
   }
-  gap: 8px;
+  gap: 20px;
   top: 200px;
   position: absolute;
   animation: aboutMainFadeIn 2s 1 ease;
@@ -66,15 +57,15 @@ const Container = styled(Column)`
   }
   @keyframes mobileAboutMainFadeIn {
     0% {
-      top: 250px;
+      top: 200px;
       opacity: 0;
     }
     20% {
-      top: 250px;
+      top: 200px;
       opacity: 0;
     }
     100% {
-      top: 150px;
+      top: 100px;
       opacity: 1;
     }
   }
@@ -82,15 +73,7 @@ const Container = styled(Column)`
 
 const HeaderWrapper = styled(Row)`
   gap: 10px;
-`
-
-const HashTagContent = styled(Column)`
-  @media ${(p) => p.theme.media.mobile} {
-    :nth-child(3) {
-      display: none;
-    }
-  }
-  gap: 10px;
+  align-items: flex-start;
 `
 
 const LoadingIcon = styled(FiLoader).attrs({ size: 24 })`
@@ -116,27 +99,12 @@ const Main = styled(Row)`
   padding: 0 80px;
 `
 
-const HashTagContainer = styled(Row)`
-  @media ${(p) => p.theme.media.mobile} {
-    padding-top: 20px;
-    padding-left: 20px;
-    gap: 20px;
-  }
-  padding-top: 50px;
-  padding-left: 50px;
-  gap: 40px;
-`
-
-const HashTagText = styled(H5Text)`
-  @media ${(p) => p.theme.media.mobile} {
-    font-size: ${(p) => p.theme.size.small};
-  }
-  font-weight: ${(p) => p.theme.weight.bold};
-`
-
 const HeaderText = styled(ExtraBoldText)`
   @media ${(p) => p.theme.media.mobile} {
-    font-size: ${(p) => p.theme.size.h2};
+    font-size: ${(p) => p.theme.size.h1};
+    .desktop {
+      display: none;
+    }
   }
   @media ${(p) => p.theme.media.desktop} {
     background: url(${prefix + '/images/item-19.jpg'});
@@ -144,6 +112,9 @@ const HeaderText = styled(ExtraBoldText)`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    .mobile {
+      display: none;
+    }
   }
   font-size: 102px;
 `
