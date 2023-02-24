@@ -10,13 +10,13 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
   return (
     <Main backgroundColor={backgroundColor}>
       <FooterText>Contact By</FooterText>
-      <a
+      {/* <a
         href='https://florentine-nutmeg-39b.notion.site/SHON-85ae96c1bfd54adf920e45d44e71560c'
         target='_blank'
         rel='noreferrer'
       >
         <FooterText>Resume</FooterText>
-      </a>
+      </a> */}
       <a href='https://devshon.github.io' target='_blank' rel='noreferrer'>
         <FooterText>Velog</FooterText>
       </a>

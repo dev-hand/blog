@@ -18,8 +18,7 @@ export const AboutMain: React.FC = () => (
         <span className='mobile'>is the</span>
       </HeaderText>
       <BottomWrapper>
-        <HeaderText>Ultimate</HeaderText>
-        <HeaderText>Sophistication</HeaderText>
+        <HeaderText>Ultimate Sophistication</HeaderText>
       </BottomWrapper>
     </Container>
   </Main>
@@ -37,7 +36,6 @@ const Container = styled(Column)`
     top: 100px;
     animation: mobileAboutMainFadeIn 2s 1 ease;
   }
-  gap: 20px;
   top: 200px;
   position: absolute;
   animation: aboutMainFadeIn 2s 1 ease;

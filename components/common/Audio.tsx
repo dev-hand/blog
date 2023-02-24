@@ -13,8 +13,8 @@ export const Audio: React.FC = () => {
   const router = useRouter()
   const [isVisible, setIsVisible] = useState(true)
   const [showAudio, setShowAudio] = useState(false)
-  const [isCloseBefore, setIsCloseBefore] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isCloseBefore, setIsCloseBefore] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,12 +31,12 @@ export const Audio: React.FC = () => {
   }
 
   const play = () => {
+    const openUrl = `${prefix}/${
+      isDev ? router.asPath : router.asPath.slice(6)
+    }`
     if (!getSessionStorage(AUDIO_KEY)) {
       setSessionStorage(AUDIO_KEY, 'false')
-      window.open(
-        `${prefix}/${isDev ? router.asPath : router.asPath.slice(6)}`,
-        '_blank',
-      )
+      window.open(openUrl, '_blank')
     }
     setIsPlaying(true)
   }
@@ -65,7 +65,7 @@ export const Audio: React.FC = () => {
               />
             </audio>
           </AudioContainer>
-          {!isPlaying && <CloseText onClick={close}>{`No, I won't`}</CloseText>}
+          <CloseText onClick={close}>{`No, I won't`}</CloseText>
         </Content>
       </Modal>
     </Main>

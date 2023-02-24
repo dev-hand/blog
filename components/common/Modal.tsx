@@ -8,19 +8,21 @@ export const Modal: React.FC<{
   isVisible: boolean
   onClose?: () => void
   disableBackgroundClose?: boolean
-}> = ({ children, isVisible, onClose, disableBackgroundClose }) => (
-  <Background
-    isVisible={isVisible}
-    onClick={(e) => {
-      if (!disableBackgroundClose) {
-        e.stopPropagation()
-        onClose?.()
-      }
-    }}
-  >
-    <Main>{children}</Main>
-  </Background>
-)
+}> = ({ children, isVisible, onClose, disableBackgroundClose }) => {
+  if (!isVisible) return null
+  return (
+    <Background
+      onClick={(e) => {
+        if (!disableBackgroundClose) {
+          e.stopPropagation()
+          onClose?.()
+        }
+      }}
+    >
+      <Main>{children}</Main>
+    </Background>
+  )
+}
 
 const Main = styled(Column)`
   height: 100%;
@@ -29,8 +31,7 @@ const Main = styled(Column)`
   animation: ${FadeIn} 2500ms 1 ease;
 `
 
-const Background = styled.div<{ isVisible: boolean }>`
-  display: ${(p) => (p.isVisible ? 'block' : 'none')};
+const Background = styled.div`
   z-index: 100;
   position: fixed;
   width: 100%;
