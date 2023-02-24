@@ -20,7 +20,7 @@ export const AboutPhotos: React.FC = () => {
     <Main>
       <TitleContainer>
         <MainText>Photos</MainText>
-        <Column style={{ gap: 10 }}>
+        <DescContainer>
           <H5DescTitle>
             I like taking pictures. Because I can take pictures of the
             atmosphere that I see.
@@ -28,7 +28,7 @@ export const AboutPhotos: React.FC = () => {
           <H5DescTitle>
             I still lack a lot, but I took all the pictures on the site myself.
           </H5DescTitle>
-        </Column>
+        </DescContainer>
       </TitleContainer>
       <ImageContainer>
         {images.map((src, index) => (
@@ -47,6 +47,12 @@ export const AboutPhotos: React.FC = () => {
     </Main>
   )
 }
+
+const DescContainer = styled(Column)`
+  @media ${(p) => p.theme.media.desktop} {
+    gap: 10px;
+  }
+`
 
 const H5DescTitle = styled(H5Text)`
   font-weight: ${(p) => p.theme.weight.light};
