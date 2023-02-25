@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import type { GetStaticProps, NextPage } from 'next'
 import { Frame } from 'components/common/Frame'
-import { prefix } from 'infra/config'
+import { PREFIX } from 'infra/config'
 import { posts } from 'public/posts'
 import { HomeList } from 'components/home/HomeList'
 import { ThemeColor } from 'infra/type'
@@ -12,7 +12,7 @@ import { Column } from 'components/common/Layout'
 export const getStaticProps: GetStaticProps = async () => {
   const data = await Promise.all(
     posts.map((post) => {
-      return fetch(decodeURI(`${prefix}/posts/${post}.md`))
+      return fetch(decodeURI(`${PREFIX}/posts/${post}.md`))
     }),
   ).then((res) => Promise.all(res.map((res) => res.text())))
   return {

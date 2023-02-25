@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Column, Row } from 'components/common/Layout'
 import { ExtraBoldText, H1Text, H5Text } from 'components/common/Text'
 import Link from 'next/link'
-import { prefix } from 'infra/config'
+import { PREFIX } from 'infra/config'
 import { HomeTags } from './HomeTags'
 import { FadeInFromHalf } from 'components/common/Keyframes'
 
@@ -21,7 +21,7 @@ export const HomeIntro: React.FC = () => (
             <H5Title>
               You can see{' '}
               <H5Text>
-                <Link href={`${prefix}/about/`}>About Me.</Link>
+                <Link href={`${PREFIX}/about/`}>About Me.</Link>
               </H5Text>
             </H5Title>
           </Column>

@@ -3,11 +3,9 @@ import styled from 'styled-components'
 import { Modal } from 'components/common/Modal'
 import { H1Text, H5Text } from 'components/common/Text'
 import { Column, Row } from 'components/common/Layout'
-import { isDev, prefix } from 'infra/config'
+import { IS_DEV, PREFIX, SHOW_AUDIO_KEY } from 'infra/config'
 import { useRouter } from 'next/router'
 import { setSessionStorage, getSessionStorage } from 'utils/handler'
-
-const AUDIO_KEY = 'SHOW_AUDIO'
 
 export const Audio: React.FC = () => {
   const router = useRouter()
@@ -18,24 +16,24 @@ export const Audio: React.FC = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (!getSessionStorage(AUDIO_KEY)) setShowAudio(true)
+      if (!getSessionStorage(SHOW_AUDIO_KEY)) setShowAudio(true)
     }, 5000)
   }, [])
 
   const close = () => {
     setIsCloseBefore(true)
-    setSessionStorage(AUDIO_KEY, 'false')
+    setSessionStorage(SHOW_AUDIO_KEY, 'false')
     setTimeout(() => {
       setIsVisible(false)
     }, 2000)
   }
 
   const play = () => {
-    const openUrl = `${prefix}/${
-      isDev ? router.asPath : router.asPath.slice(6)
+    const openUrl = `${PREFIX}/${
+      IS_DEV ? router.asPath : router.asPath.slice(6)
     }`
-    if (!getSessionStorage(AUDIO_KEY)) {
-      setSessionStorage(AUDIO_KEY, 'false')
+    if (!getSessionStorage(SHOW_AUDIO_KEY)) {
+      setSessionStorage(SHOW_AUDIO_KEY, 'false')
       window.open(openUrl, '_blank')
     }
     setIsPlaying(true)
@@ -60,7 +58,7 @@ export const Audio: React.FC = () => {
             <DescTitle>Play the music</DescTitle>
             <audio id='player' controls loop onPlay={play}>
               <source
-                src={`${prefix}/music/AetherTender.mp3`}
+                src={`${PREFIX}/music/AetherTender.mp3`}
                 type='audio/mp3'
               />
             </audio>

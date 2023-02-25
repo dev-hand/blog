@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { prefix } from 'infra/config'
+import { PREFIX } from 'infra/config'
 import { Column } from 'components/common/Layout'
 
 export const BackgroundContainer = styled(Column)`
@@ -19,7 +19,7 @@ export const BackgroundWrapper = styled(Column).attrs(() => ({
 `
 
 export const BackgroundImage = styled.div<{ src: string }>`
-  background-image: url(${(p) => prefix + p.src});
+  background-image: url(${(p) => PREFIX + p.src});
   background-size: cover;
   background-position: center;
 `

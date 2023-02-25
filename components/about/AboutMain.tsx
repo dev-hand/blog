@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Column, Row } from 'components/common/Layout'
 import { ExtraBoldText } from 'components/common/Text'
 import { FiLoader } from 'react-icons/fi'
-import { prefix } from 'infra/config'
+import { PREFIX } from 'infra/config'
 
 export const AboutMain: React.FC = () => (
   <Main>
@@ -91,7 +91,7 @@ const HeaderText = styled(ExtraBoldText)`
     }
   }
   @media ${(p) => p.theme.media.desktop} {
-    background: url(${prefix + '/images/item-19.jpg'});
+    background: url(${PREFIX + '/images/item-19.jpg'});
     background-size: cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

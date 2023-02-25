@@ -6,7 +6,7 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'styles/theme'
 import { PortfolioProvider } from 'infra/context'
-import { prefix } from 'infra/config'
+import { PREFIX } from 'infra/config'
 import { Audio } from 'components/common/Audio'
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
@@ -14,7 +14,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     <Head>
       <title>Many things</title>
     </Head>
-    <PortfolioProvider value={prefix}>
+    <PortfolioProvider value={PREFIX}>
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
         <Audio />

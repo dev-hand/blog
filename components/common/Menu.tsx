@@ -5,7 +5,7 @@ import { Column } from 'components/common/Layout'
 import { FiMenu } from 'react-icons/fi'
 import { theme } from 'styles/theme'
 import { useRouter } from 'next/router'
-import { prefix } from 'infra/config'
+import { PREFIX } from 'infra/config'
 
 export const Menu: React.FC<{ onMenuClick: () => void }> = ({
   onMenuClick,
@@ -21,13 +21,13 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
       />
       <BoldText
         className={router.pathname === '/about' ? 'selected' : ''}
-        onClick={() => router.push(`${prefix}/about/`)}
+        onClick={() => router.push(`${PREFIX}/about/`)}
       >
         about
       </BoldText>
       <BoldText
         className={router.pathname === '/' ? 'selected' : ''}
-        onClick={() => router.push(`${prefix}/`)}
+        onClick={() => router.push(`${PREFIX}/`)}
       >
         home
       </BoldText>

@@ -4,17 +4,22 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Column, Row } from 'components/common/Layout'
 import { H5Text, SmallText } from 'components/common/Text'
-import { layoutFormat, thumbnailFormat } from 'utils/format'
-import { prefix } from 'infra/config'
+import { markdownLayoutFilter, getMarkdownThumbnail } from 'utils/format'
+import { PREFIX, ROUTER_HISTORY_KEY } from 'infra/config'
+import { getLocalStorage } from 'utils/handler'
 
-export const HomeItem: React.FC<{ item: string }> = ({ item }) => {
-  const title = layoutFormat('title', item)
-  const date = layoutFormat('date', item)
-  const thumbnail = thumbnailFormat(item)
+const HomeItem: React.FC<{ item: string }> = ({ item }) => {
+  const title = markdownLayoutFilter('title', item)
+  const date = markdownLayoutFilter('date', item)
+  const thumbnail = getMarkdownThumbnail(item)
+  const history = Array.from(
+    new Set(decodeURI(getLocalStorage(ROUTER_HISTORY_KEY) || '')?.split(',')),
+  )
+  const isViewed = history.includes(`/posts/${title}/`)
   return (
-    <Link href={`${prefix}/posts/${title}/`}>
+    <Link href={`${PREFIX}/posts/${title}/`}>
       <Main>
-        <div>
+        <ImageWrapper isViewed={isViewed}>
           <Image
             src={`/images/${thumbnail}`}
             alt={thumbnail}
@@ -23,8 +28,8 @@ export const HomeItem: React.FC<{ item: string }> = ({ item }) => {
             layout='responsive'
             priority
           />
-        </div>
-        <TitleWrapper>
+        </ImageWrapper>
+        <TitleWrapper isViewed={isViewed}>
           <H5Title>{title}</H5Title>
           <SmallTitle>{date}</SmallTitle>
         </TitleWrapper>
@@ -33,9 +38,14 @@ export const HomeItem: React.FC<{ item: string }> = ({ item }) => {
   )
 }
 
-const TitleWrapper = styled(Row)`
+const ImageWrapper = styled.div<{ isViewed: boolean }>`
+  opacity: ${(p) => (p.isViewed ? 0.4 : 1)};
+`
+
+const TitleWrapper = styled(Row)<{ isViewed: boolean }>`
   justify-content: space-between;
   align-items: center;
+  opacity: ${(p) => (p.isViewed ? 0.4 : 1)};
 `
 
 const SmallTitle = styled(SmallText)`
@@ -56,3 +66,5 @@ const Main = styled(Column)`
 const H5Title = styled(H5Text)`
   font-weight: ${(p) => p.theme.weight.regular};
 `
+
+export default HomeItem

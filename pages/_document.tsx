@@ -1,4 +1,4 @@
-import { prefix } from 'infra/config'
+import { PREFIX } from 'infra/config'
 import Document, {
   Html,
   Head,
@@ -47,7 +47,7 @@ class MyDocument extends Document {
             property='og:image'
             content='https://devshon.github.io/blog/images/KakaoTalk_Photo_2023-02-19-20-21-31.jpeg'
           />
-          <link rel='icon' href={`${prefix}/icons/profile.svg`} />
+          <link rel='icon' href={`${PREFIX}/icons/profile.svg`} />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link

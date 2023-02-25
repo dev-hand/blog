@@ -6,7 +6,7 @@ import { H4Text } from 'components/common/Text'
 import { Menu } from 'components/common/Menu'
 import { theme } from 'styles/theme'
 import { useRouter } from 'next/router'
-import { prefix } from 'infra/config'
+import { PREFIX } from 'infra/config'
 import { ThemeColor } from 'infra/type'
 
 export const Header: React.FC<{ backgroundColor: ThemeColor }> = ({
@@ -16,7 +16,7 @@ export const Header: React.FC<{ backgroundColor: ThemeColor }> = ({
   const [openMenu, setOpenMenu] = useState(false)
   return (
     <Main backgroundColor={backgroundColor}>
-      <HeaderText onClick={() => router.push(`${prefix}/`)}>
+      <HeaderText onClick={() => router.push(`${PREFIX}/`)}>
         Many things
       </HeaderText>
       <FiMenu

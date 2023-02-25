@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { Preview } from 'components/common/Preview'
-import { prefix } from 'infra/config'
-import { contentFormat, layoutFormat } from 'utils/format'
+import { PREFIX, ROUTER_HISTORY_KEY } from 'infra/config'
+import { getMarkdownContent, markdownLayoutFilter } from 'utils/format'
 import { Frame } from 'components/common/Frame'
 import { Column, Media } from 'components/common/Layout'
 import { BaseText, ExtraBoldText } from 'components/common/Text'
@@ -11,6 +11,7 @@ import { posts } from 'public/posts'
 import { useRouter } from 'next/router'
 import { ThemeColor } from 'infra/type'
 import { theme } from 'styles/theme'
+import { getLocalStorage, setLocalStorage } from 'utils/handler'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = posts.map((post) => {
@@ -28,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const title = context.params?.title as string
-  const data = await fetch(decodeURI(`${prefix}/posts/${title}.md`)).then(
+  const data = await fetch(decodeURI(`${PREFIX}/posts/${title}.md`)).then(
     (res) => res.text(),
   )
 
@@ -39,15 +40,23 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const Post: NextPage<{ data: string }> = ({ data }) => {
   const router = useRouter()
-  const title = layoutFormat('title', data)
-  const writer = layoutFormat('writer', data)
-  const content = contentFormat(data)
+  const title = markdownLayoutFilter('title', data)
+  const writer = markdownLayoutFilter('writer', data)
+  const content = getMarkdownContent(data)
+
   useEffect(() => {
+    const history =
+      getLocalStorage(ROUTER_HISTORY_KEY) !== null
+        ? [getLocalStorage(ROUTER_HISTORY_KEY)]
+        : []
+    history.push(router.asPath)
+    setLocalStorage('ROUTER_HISTORY', String(history))
     router.beforePopState((state) => {
       state.options.scroll = false
       return true
     })
   }, [router])
+
   return (
     <Frame backgroundColor={ThemeColor.B1}>
       <Main>
