@@ -24,27 +24,30 @@ export const AboutIntro: React.FC = () => {
       <IntroContainer ref={observingTarget}>
         {isVisible && (
           <IntroWrapper>
-            <IntroTitleText>Welcome!</IntroTitleText>
+            <IntroTitleText>시작부터 끝까지!</IntroTitleText>
             <Column>
               <IntroSubText className='one'>
-                {`I've participated in all the processes for project success while working so far.`}
+                {`지금까지 일하면서 프로젝트 성공을 위한 모든 과정을 함께했습니다.`}
               </IntroSubText>
               <br />
               <IntroSubText className='two'>
-                {`Planning, Explore users' needs, define problems, and create solutions.`}
+                {`기획, 사용자의 요구사항을 탐색하고, 문제현상을 정의하여 솔루션을 정합니다.`}
               </IntroSubText>
+              <br />
               <IntroSubText className='two'>
-                {`Layout, Gather the necessary tools and calculate the design and development man-hours of the model to create a timeline.`}
+                {`설계, 필요한 도구들을 수집하고 모델의 설계와 개발 공수를 측정하여 타임라인을 구축합니다.`}
               </IntroSubText>
               <br />
               <IntroSubText className='three'>
-                {`Design, Design simple early models that focus on user experience.`}
+                {`디자인, 사용자 경험에 집중한 심플한 초기 모델을 디자인합니다.`}
               </IntroSubText>
+              <br />
               <IntroSubText className='three'>
-                {`Development, Use consistent code, reduce dependencies, and create highly readable and independent code.`}
+                {`개발, 애자일 방법을 추구합니다.\n커뮤니케이션과 PR문화를 중요하게 생각합니다.\n일관된 코드를 사용하고, 읽기 쉬운 코드를 짜기위해 고민합니다.`}
               </IntroSubText>
+              <br />
               <IntroSubText className='three'>
-                {`Test, repeat based on the problem found by measuring the user's data.`}
+                {`테스트, 배포 후 사용자 데이터를 측정하여 발견된 문제 현상을 기반으로 기획을 반복합니다.`}
               </IntroSubText>
             </Column>
           </IntroWrapper>

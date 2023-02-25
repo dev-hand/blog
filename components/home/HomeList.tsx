@@ -1,7 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Grid, Row } from 'components/common/Layout'
 import { HomeItem } from 'components/home/HomeItem'
-import styled from 'styled-components'
 
 export const HomeList: React.FC<{ data: string[] }> = ({ data }) => {
   return (

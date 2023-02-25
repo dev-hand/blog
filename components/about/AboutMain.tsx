@@ -9,31 +9,17 @@ export const AboutMain: React.FC = () => (
   <Main>
     <Container>
       <HeaderWrapper>
-        <HeaderText>
-          Simplicity <span className='desktop'>is the</span>
-        </HeaderText>
+        <HeaderText>단순함은</HeaderText>
         <LoadingIcon />
       </HeaderWrapper>
-      <HeaderText>
-        <span className='mobile'>is the</span>
-      </HeaderText>
-      <BottomWrapper>
-        <HeaderText>Ultimate Sophistication</HeaderText>
-      </BottomWrapper>
+      <HeaderText>궁극의 정교함이다.</HeaderText>
     </Container>
   </Main>
 )
 
-const BottomWrapper = styled(Row)`
-  @media ${(p) => p.theme.media.mobile} {
-    flex-direction: column;
-  }
-  gap: 20px;
-`
-
 const Container = styled(Column)`
   @media ${(p) => p.theme.media.mobile} {
-    top: 100px;
+    top: 150px;
     animation: mobileAboutMainFadeIn 2s 1 ease;
   }
   top: 200px;
@@ -55,15 +41,15 @@ const Container = styled(Column)`
   }
   @keyframes mobileAboutMainFadeIn {
     0% {
-      top: 200px;
+      top: 250px;
       opacity: 0;
     }
     20% {
-      top: 200px;
+      top: 250px;
       opacity: 0;
     }
     100% {
-      top: 100px;
+      top: 150px;
       opacity: 1;
     }
   }

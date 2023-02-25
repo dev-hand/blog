@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { Column, Grid } from 'components/common/Layout'
-import { ExtraBoldText, H5Text } from 'components/common/Text'
+import { DescText, ExtraBoldText } from 'components/common/Text'
 
 const images = [
   '/images/item-16.jpeg',
@@ -20,15 +20,9 @@ export const AboutPhotos: React.FC = () => {
     <Main>
       <TitleContainer>
         <MainText>Photos</MainText>
-        <DescContainer>
-          <H5DescTitle>
-            I like taking pictures. Because I can take pictures of the
-            atmosphere that I see.
-          </H5DescTitle>
-          <H5DescTitle>
-            I still lack a lot, but I took all the pictures on the site myself.
-          </H5DescTitle>
-        </DescContainer>
+        <H5DescTitle>
+          {`제가 느끼는 시선의 분위기를 사진으로 남기는 것을 좋아합니다.\n아직 부족한 부분이 많지만 사이트에 있는 사진은 모두 제가 직접 찍었습니다.`}
+        </H5DescTitle>
       </TitleContainer>
       <ImageContainer>
         {images.map((src, index) => (
@@ -48,14 +42,12 @@ export const AboutPhotos: React.FC = () => {
   )
 }
 
-const DescContainer = styled(Column)`
-  @media ${(p) => p.theme.media.desktop} {
-    gap: 10px;
+const H5DescTitle = styled(DescText)`
+  @media ${(p) => p.theme.media.mobile} {
+    white-space: normal;
   }
-`
-
-const H5DescTitle = styled(H5Text)`
   font-weight: ${(p) => p.theme.weight.light};
+  font-size: ${(p) => p.theme.size.h5};
 `
 
 const TitleContainer = styled(Column)`

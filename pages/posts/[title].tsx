@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import moment from 'moment'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { Preview } from 'components/common/Preview'
 import { prefix } from 'infra/config'
@@ -43,7 +42,6 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
   const title = layoutFormat('title', data)
   const writer = layoutFormat('writer', data)
   const content = contentFormat(data)
-  const date = layoutFormat('date', data)
   useEffect(() => {
     router.beforePopState((state) => {
       state.options.scroll = false
@@ -68,7 +66,7 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
                 }}
               />
             </Column>
-            <ItalicTitle>{moment(date).format('M월 D일, YYYY')}</ItalicTitle>
+            <ItalicTitle>- {title} -</ItalicTitle>
           </Content>
         </Media>
       </Main>
