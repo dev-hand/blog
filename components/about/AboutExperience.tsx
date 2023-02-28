@@ -12,8 +12,7 @@ export const AboutExperience: React.FC = () => {
         </TitleWrapper>
         <ContentWrapper>
           <H5Title>
-            2022.06 투자받은 초기 스타트업과 개발자의 채용을 연결해주는 스타트업
-            채용 서비스 개발
+            2022.06 초기 스타트업과 개발자의 채용을 연결해주는 채용 서비스 개발
           </H5Title>
           <H5Title>
             2022.05 차량 개인정보 보호와 도난 방지를 위한 차량용 서비스 개발
@@ -34,9 +33,7 @@ export const AboutExperience: React.FC = () => {
           <H5Title>
             2022.04 중고 직거래 사이트 당근마켓 웹 클론 프로젝트
           </H5Title>
-          <H5Title>
-            2022.03 내주변 숨은 고수 찾기 서비스 숨고 웹 클론 프로젝트
-          </H5Title>
+          <H5Title>2022.03 숨은 고수 찾기 서비스 숨고 웹 클론 프로젝트</H5Title>
           <H5Title>2022.03 스타벅스 웹 클론 프로젝트</H5Title>
           <H5Title>2020.06 학원 정보 제공과 중계 서비스 프로젝트</H5Title>
         </ContentWrapper>
@@ -71,6 +68,7 @@ export const AboutExperience: React.FC = () => {
 const H5Title = styled(DescText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.default};
+    white-space: normal;
   }
   font-weight: ${(p) => p.theme.weight.regular};
   font-size: ${(p) => p.theme.size.h5};
