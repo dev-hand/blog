@@ -5,7 +5,7 @@ import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 
 const Cube: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-
+  const isDesktop = window.innerWidth >= 1080
   useEffect(() => {
     if (!canvasRef.current) return
 
@@ -42,7 +42,7 @@ const Cube: React.FC = () => {
       (font) => {
         const textGeometry = new TextGeometry("I'm Learning Three.js", {
           font: font,
-          size: 0.5,
+          size: isDesktop ? 0.5 : 0.16,
           height: 0.2,
           curveSegments: 10,
           bevelEnabled: true,
@@ -55,7 +55,7 @@ const Cube: React.FC = () => {
           color: '#ffd000',
         })
         const textMesh = new THREE.Mesh(textGeometry, textMaterial)
-        textMesh.position.set(-3, 1.1, -0.5)
+        textMesh.position.set(isDesktop ? -3 : -1, 1.1, -0.5)
         scene.add(textMesh)
       },
     )

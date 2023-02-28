@@ -11,8 +11,10 @@
     "deploy": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.191",
     "@types/three": "^0.149.0",
     "@uiw/react-md-editor": "^3.19.7",
+    "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "next": "12.3.1",
     "next-remove-imports": "^1.0.8",
