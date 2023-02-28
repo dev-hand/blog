@@ -47,7 +47,7 @@ const Cube: React.FC = () => {
       (font) => {
         const textGeometry = new TextGeometry('Learning Three.js', {
           font: font,
-          size: isDesktop ? 0.5 : 0.16,
+          size: isDesktop ? 0.5 : 0.2,
           height: 0.2,
           curveSegments: 10,
           bevelEnabled: true,
@@ -60,7 +60,7 @@ const Cube: React.FC = () => {
           color: '#ffffff',
         })
         const textMesh = new THREE.Mesh(textGeometry, textMaterial)
-        textMesh.position.set(isDesktop ? -2.6 : -0.8, 1.1, -0.5)
+        textMesh.position.set(isDesktop ? -2.6 : -1, 1.1, -0.5)
         scene.add(textMesh)
       },
     )
