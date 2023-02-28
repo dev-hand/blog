@@ -26,6 +26,12 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
         about
       </BoldText>
       <BoldText
+        className={router.pathname === '/learn' ? 'selected' : ''}
+        onClick={() => router.push(`${PREFIX}/learn/`)}
+      >
+        learn
+      </BoldText>
+      <BoldText
         className={router.pathname === '/' ? 'selected' : ''}
         onClick={() => router.push(`${PREFIX}/`)}
       >

@@ -2,6 +2,9 @@ import React, { useRef, useEffect } from 'react'
 import * as THREE from 'three'
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
+import { Frame } from 'components/common/Frame'
+import { ThemeColor } from 'infra/type'
+import { theme } from 'styles/theme'
 
 const Cube: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -25,13 +28,15 @@ const Cube: React.FC = () => {
 
     // BoxGeometry 생성
     const boxGeometry = new THREE.BoxGeometry(1.4, 1.4, 1.4)
-    const material = new THREE.MeshStandardMaterial({ color: '#a52a2a' })
+    const material = new THREE.MeshStandardMaterial({
+      color: theme.color.primary,
+    })
 
     // BoxMesh 생성
     const boxMesh = new THREE.Mesh(boxGeometry, material)
     scene.add(boxMesh)
 
-    const light = new THREE.DirectionalLight(0xffffff, 1)
+    const light = new THREE.DirectionalLight('#ffffff', 1)
     light.position.set(-1, 2, 4)
     scene.add(light)
 
@@ -40,7 +45,7 @@ const Cube: React.FC = () => {
     fontLoader.load(
       'https://threejs.org/examples/fonts/helvetiker_regular.typeface.json',
       (font) => {
-        const textGeometry = new TextGeometry("I'm Learning Three.js", {
+        const textGeometry = new TextGeometry('Learning Three.js', {
           font: font,
           size: isDesktop ? 0.5 : 0.16,
           height: 0.2,
@@ -52,10 +57,10 @@ const Cube: React.FC = () => {
           bevelSegments: 10,
         })
         const textMaterial = new THREE.MeshStandardMaterial({
-          color: '#ffd000',
+          color: '#ffffff',
         })
         const textMesh = new THREE.Mesh(textGeometry, textMaterial)
-        textMesh.position.set(isDesktop ? -3 : -1, 1.1, -0.5)
+        textMesh.position.set(isDesktop ? -2.6 : -0.8, 1.1, -0.5)
         scene.add(textMesh)
       },
     )
@@ -63,6 +68,7 @@ const Cube: React.FC = () => {
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
     renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setClearColor(theme.color.background2) // 16진수 색상 코드 사용
 
     function animate() {
       renderer.render(scene, camera)
@@ -72,7 +78,11 @@ const Cube: React.FC = () => {
     animate()
   }, [])
 
-  return <canvas ref={canvasRef} />
+  return (
+    <Frame backgroundColor={ThemeColor.B2}>
+      <canvas ref={canvasRef} />
+    </Frame>
+  )
 }
 
 export default Cube
