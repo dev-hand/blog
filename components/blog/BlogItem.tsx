@@ -8,7 +8,7 @@ import { markdownLayoutFilter, getMarkdownThumbnail } from 'utils/format'
 import { PREFIX, ROUTER_HISTORY_KEY } from 'infra/config'
 import { getLocalStorage } from 'utils/handler'
 
-const HomeItem: React.FC<{ item: string }> = ({ item }) => {
+const BlogItem: React.FC<{ item: string }> = ({ item }) => {
   const title = markdownLayoutFilter('title', item)
   const date = markdownLayoutFilter('date', item)
   const thumbnail = getMarkdownThumbnail(item)
@@ -67,4 +67,4 @@ const H5Title = styled(H5Text)`
   font-weight: ${(p) => p.theme.weight.regular};
 `
 
-export default HomeItem
+export default BlogItem

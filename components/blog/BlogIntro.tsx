@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
 import { Column, Row } from 'components/common/Layout'
 import { ExtraBoldText, H1Text, H5Text } from 'components/common/Text'
-import Link from 'next/link'
 import { PREFIX } from 'infra/config'
-import { HomeTags } from './HomeTags'
+import { BlogTags } from './BlogTags'
 import { FadeInFromHalf } from 'components/common/Keyframes'
 
-export const HomeIntro: React.FC = () => (
+export const BlogIntro: React.FC = () => (
   <Main>
     <IntroTitleContainer>
-      <HomeTitleWrapper>
+      <TitleWrapper>
         <UltraTitle className='ultraTitle'>{`Hi I'm DevShon`}</UltraTitle>
         <H1Title className='h1Title'>{`It's Home`}</H1Title>
-      </HomeTitleWrapper>
+      </TitleWrapper>
       <AboutTitleWrapper>
         <Column style={{ gap: 15 }}>
           <Column style={{ gap: 5 }}>
@@ -25,14 +25,14 @@ export const HomeIntro: React.FC = () => (
               </H5Text>
             </H5Title>
           </Column>
-          <HomeTags />
+          <BlogTags />
         </Column>
       </AboutTitleWrapper>
     </IntroTitleContainer>
   </Main>
 )
 
-const HomeTitleWrapper = styled(Column)`
+const TitleWrapper = styled(Column)`
   flex: 1;
   .h1Title {
     animation: ${FadeInFromHalf} 2500ms 1 ease;

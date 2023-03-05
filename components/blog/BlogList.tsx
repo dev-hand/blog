@@ -3,16 +3,16 @@ import styled from 'styled-components'
 import dynamic from 'next/dynamic'
 import { Grid, Row } from 'components/common/Layout'
 
-const HomeItem = dynamic(() => import('../home/HomeItem'), {
+const BlogItem = dynamic(() => import('./BlogItem'), {
   ssr: false,
 })
 
-export const HomeList: React.FC<{ data: string[] }> = ({ data }) => {
+export const BlogList: React.FC<{ data: string[] }> = ({ data }) => {
   return (
     <Main>
       <PostContainer>
         {data.map((item, index) => (
-          <HomeItem key={index} item={item} />
+          <BlogItem key={index} item={item} />
         ))}
       </PostContainer>
     </Main>

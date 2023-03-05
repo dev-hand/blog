@@ -4,9 +4,9 @@ import type { GetStaticProps, NextPage } from 'next'
 import { Frame } from 'components/common/Frame'
 import { PREFIX } from 'infra/config'
 import { posts } from 'public/posts'
-import { HomeList } from 'components/home/HomeList'
+import { BlogList } from 'components/blog/BlogList'
 import { ThemeColor } from 'infra/type'
-import { HomeIntro } from 'components/home/HomeIntro'
+import { BlogIntro } from 'components/blog/BlogIntro'
 import { Column } from 'components/common/Layout'
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -20,12 +20,12 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Home: NextPage<{ data: string[] }> = ({ data }) => {
+const Blog: NextPage<{ data: string[] }> = ({ data }) => {
   return (
     <Frame backgroundColor={ThemeColor.B2}>
       <Main>
-        <HomeIntro />
-        <HomeList data={data} />
+        <BlogIntro />
+        <BlogList data={data} />
       </Main>
     </Frame>
   )
@@ -36,4 +36,4 @@ const Main = styled(Column)`
   padding: 100px 0;
 `
 
-export default Home
+export default Blog

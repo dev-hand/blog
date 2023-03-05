@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 const tags = ['developer', 'engineer', 'traveler']
 
-export const HomeTags: React.FC = () => {
+export const BlogTags: React.FC = () => {
   const [tag, setTag] = useState(tags[0])
   useEffect(() => {
     let index = 0

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { Preview } from 'components/common/Preview'
-import { PREFIX, ROUTER_HISTORY_KEY } from 'infra/config'
+import { IS_DEV, PREFIX, ROUTER_HISTORY_KEY } from 'infra/config'
 import { getMarkdownContent, markdownLayoutFilter } from 'utils/format'
 import { Frame } from 'components/common/Frame'
 import { Column, Media } from 'components/common/Layout'
@@ -38,6 +38,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 }
 
+const addPathInLocalStorage = (path: string) => {
+  const history =
+    getLocalStorage(ROUTER_HISTORY_KEY) !== null
+      ? [getLocalStorage(ROUTER_HISTORY_KEY)]
+      : []
+  history.push(path)
+  setLocalStorage('ROUTER_HISTORY', String(history))
+}
+
 const Post: NextPage<{ data: string }> = ({ data }) => {
   const router = useRouter()
   const title = markdownLayoutFilter('title', data)
@@ -45,12 +54,7 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
   const content = getMarkdownContent(data)
 
   useEffect(() => {
-    const history =
-      getLocalStorage(ROUTER_HISTORY_KEY) !== null
-        ? [getLocalStorage(ROUTER_HISTORY_KEY)]
-        : []
-    history.push(router.asPath)
-    setLocalStorage('ROUTER_HISTORY', String(history))
+    addPathInLocalStorage(IS_DEV ? router.asPath : router.asPath.slice(6))
     router.beforePopState((state) => {
       state.options.scroll = false
       return true
