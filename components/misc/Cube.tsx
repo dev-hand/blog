@@ -5,6 +5,7 @@ import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 import { Frame } from 'components/common/Frame'
 import { ThemeColor } from 'infra/type'
 import { theme } from 'styles/theme'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 const Cube: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -24,17 +25,20 @@ const Cube: React.FC = () => {
       0.1,
       1000,
     )
-    camera.position.z = 3
+    const controls = new OrbitControls(camera, renderer.domElement)
+
+    camera.position.z = isDesktop ? 3 : 5
 
     // BoxGeometry 생성
-    const boxGeometry = new THREE.BoxGeometry(1.4, 1.4, 1.4)
+    const SphereGeometry = new THREE.SphereGeometry(1, 32, 32)
     const material = new THREE.MeshStandardMaterial({
-      color: theme.color.primary,
+      color: '0xffffff',
+      wireframe: true,
     })
 
     // BoxMesh 생성
-    const boxMesh = new THREE.Mesh(boxGeometry, material)
-    scene.add(boxMesh)
+    const sphereMesh = new THREE.Mesh(SphereGeometry, material)
+    scene.add(sphereMesh)
 
     const light = new THREE.DirectionalLight('#ffffff', 1)
     light.position.set(-1, 2, 4)
@@ -45,23 +49,39 @@ const Cube: React.FC = () => {
     fontLoader.load(
       'https://threejs.org/examples/fonts/helvetiker_regular.typeface.json',
       (font) => {
-        const textGeometry = new TextGeometry('Learning Three.js', {
+        const options = {
           font: font,
-          size: isDesktop ? 0.5 : 0.2,
-          height: 0.2,
-          curveSegments: 10,
+          size: 0.2,
+          height: 0.1,
+          curveSegments: 100,
           bevelEnabled: true,
-          bevelThickness: 0.03,
-          bevelSize: 0.02,
+          bevelThickness: 0.01,
+          bevelSize: 0.01,
           bevelOffset: 0,
           bevelSegments: 10,
-        })
+        }
+        const textGeometryFront = new TextGeometry('NextJS', options)
+        const textGeometryRight = new TextGeometry('TypeScript', options)
+        const textGeometryLeft = new TextGeometry('SWR', options)
+        const textGeometryBack = new TextGeometry('MobX', options)
         const textMaterial = new THREE.MeshStandardMaterial({
           color: '#ffffff',
         })
-        const textMesh = new THREE.Mesh(textGeometry, textMaterial)
-        textMesh.position.set(isDesktop ? -2.6 : -1, 1.1, -0.5)
-        scene.add(textMesh)
+        const textMeshFront = new THREE.Mesh(textGeometryFront, textMaterial)
+        const textMeshRight = new THREE.Mesh(textGeometryRight, textMaterial)
+        const textMeshLeft = new THREE.Mesh(textGeometryLeft, textMaterial)
+        const textMeshBack = new THREE.Mesh(textGeometryBack, textMaterial)
+        textMeshFront.position.set(-0.5, 0, 1)
+        textMeshRight.position.set(1, 0, 0.7)
+        textMeshLeft.position.set(-1, 0, -0.4)
+        textMeshBack.position.set(0.5, 0, -1)
+        textMeshRight.rotateY(1.56)
+        textMeshLeft.rotateY(-1.56)
+        textMeshBack.rotateY(3.15)
+        sphereMesh.add(textMeshFront)
+        sphereMesh.add(textMeshRight)
+        sphereMesh.add(textMeshLeft)
+        sphereMesh.add(textMeshBack)
       },
     )
 
@@ -71,9 +91,10 @@ const Cube: React.FC = () => {
     renderer.setClearColor(theme.color.background2) // 16진수 색상 코드 사용
 
     function animate() {
-      renderer.render(scene, camera)
-      boxMesh.rotation.y += 0.01
       requestAnimationFrame(animate)
+      controls.update()
+      sphereMesh.rotation.y += 0.005
+      renderer.render(scene, camera)
     }
     animate()
   }, [])
