@@ -5,21 +5,16 @@ import Image from 'next/image'
 import { Column, Row } from 'components/common/Layout'
 import { H5Text, SmallText } from 'components/common/Text'
 import { markdownLayoutFilter, getMarkdownThumbnail } from 'utils/format'
-import { PREFIX, ROUTER_HISTORY_KEY } from 'infra/config'
-import { getLocalStorage } from 'utils/handler'
+import { PREFIX } from 'infra/config'
 
 const BlogItem: React.FC<{ item: string }> = ({ item }) => {
   const title = markdownLayoutFilter('title', item)
   const date = markdownLayoutFilter('date', item)
   const thumbnail = getMarkdownThumbnail(item)
-  const history = Array.from(
-    new Set(decodeURI(getLocalStorage(ROUTER_HISTORY_KEY) || '')?.split(',')),
-  )
-  const isViewed = history.includes(`/posts/${title}/`)
   return (
     <Link href={`${PREFIX}/posts/${title}/`}>
       <Main>
-        <ImageWrapper isViewed={isViewed}>
+        <ImageWrapper>
           <Image
             src={`/images/${thumbnail}`}
             alt={thumbnail}
@@ -29,8 +24,10 @@ const BlogItem: React.FC<{ item: string }> = ({ item }) => {
             priority
           />
         </ImageWrapper>
-        <TitleWrapper isViewed={isViewed}>
-          <H5Title>{title}</H5Title>
+        <TitleWrapper>
+          <H5Title>
+            <a href={`${PREFIX}/posts/${title}/`}>{title}</a>
+          </H5Title>
           <SmallTitle>{date}</SmallTitle>
         </TitleWrapper>
       </Main>
@@ -38,14 +35,11 @@ const BlogItem: React.FC<{ item: string }> = ({ item }) => {
   )
 }
 
-const ImageWrapper = styled.div<{ isViewed: boolean }>`
-  opacity: ${(p) => (p.isViewed ? 0.4 : 1)};
-`
+const ImageWrapper = styled.div``
 
-const TitleWrapper = styled(Row)<{ isViewed: boolean }>`
+const TitleWrapper = styled(Row)`
   justify-content: space-between;
   align-items: center;
-  opacity: ${(p) => (p.isViewed ? 0.4 : 1)};
 `
 
 const SmallTitle = styled(SmallText)`

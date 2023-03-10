@@ -2,10 +2,8 @@ import React, { useRef, useEffect } from 'react'
 import * as THREE from 'three'
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
-import { Frame } from 'components/common/Frame'
-import { ThemeColor } from 'infra/type'
 import { theme } from 'styles/theme'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 const Cube: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -25,9 +23,9 @@ const Cube: React.FC = () => {
       0.1,
       1000,
     )
-    const controls = new OrbitControls(camera, renderer.domElement)
+    // const controls = new OrbitControls(camera, renderer.domElement)
 
-    camera.position.z = isDesktop ? 3 : 5
+    camera.position.z = isDesktop ? 2 : 5
 
     // BoxGeometry 생성
     const SphereGeometry = new THREE.SphereGeometry(1, 32, 32)
@@ -52,7 +50,7 @@ const Cube: React.FC = () => {
         const options = {
           font: font,
           size: 0.2,
-          height: 0.1,
+          height: 0.05,
           curveSegments: 100,
           bevelEnabled: true,
           bevelThickness: 0.01,
@@ -60,28 +58,31 @@ const Cube: React.FC = () => {
           bevelOffset: 0,
           bevelSegments: 10,
         }
-        const textGeometryFront = new TextGeometry('NextJS', options)
-        const textGeometryRight = new TextGeometry('TypeScript', options)
-        const textGeometryLeft = new TextGeometry('SWR', options)
-        const textGeometryBack = new TextGeometry('MobX', options)
+        const textGeometryNextJS = new TextGeometry('NextJS', options)
+        const textGeometryTypeScript = new TextGeometry('TypeScript', options)
+        const textGeometrySWR = new TextGeometry('SWR', options)
+        const textGeometryMobX = new TextGeometry('MobX', options)
         const textMaterial = new THREE.MeshStandardMaterial({
           color: '#ffffff',
         })
-        const textMeshFront = new THREE.Mesh(textGeometryFront, textMaterial)
-        const textMeshRight = new THREE.Mesh(textGeometryRight, textMaterial)
-        const textMeshLeft = new THREE.Mesh(textGeometryLeft, textMaterial)
-        const textMeshBack = new THREE.Mesh(textGeometryBack, textMaterial)
-        textMeshFront.position.set(-0.5, 0, 1)
-        textMeshRight.position.set(1, 0, 0.7)
-        textMeshLeft.position.set(-1, 0, -0.4)
-        textMeshBack.position.set(0.5, 0, -1)
-        textMeshRight.rotateY(1.56)
-        textMeshLeft.rotateY(-1.56)
-        textMeshBack.rotateY(3.15)
-        sphereMesh.add(textMeshFront)
-        sphereMesh.add(textMeshRight)
-        sphereMesh.add(textMeshLeft)
-        sphereMesh.add(textMeshBack)
+        const textMeshNextJS = new THREE.Mesh(textGeometryNextJS, textMaterial)
+        const textMeshTypeScript = new THREE.Mesh(
+          textGeometryTypeScript,
+          textMaterial,
+        )
+        const textMeshSWR = new THREE.Mesh(textGeometrySWR, textMaterial)
+        const textMeshMobX = new THREE.Mesh(textGeometryMobX, textMaterial)
+        textMeshNextJS.position.set(-0.5, 0, 1.1)
+        textMeshTypeScript.position.set(1.1, 0, 0.7)
+        textMeshSWR.position.set(-1.1, 0, -0.4)
+        textMeshMobX.position.set(0.5, 0, -1.1)
+        textMeshTypeScript.rotateY(1.56)
+        textMeshSWR.rotateY(-1.56)
+        textMeshMobX.rotateY(3.15)
+        sphereMesh.add(textMeshNextJS)
+        sphereMesh.add(textMeshTypeScript)
+        sphereMesh.add(textMeshSWR)
+        sphereMesh.add(textMeshMobX)
       },
     )
 
@@ -92,18 +93,14 @@ const Cube: React.FC = () => {
 
     function animate() {
       requestAnimationFrame(animate)
-      controls.update()
+      // controls.update()
       sphereMesh.rotation.y += 0.005
       renderer.render(scene, camera)
     }
     animate()
   }, [])
 
-  return (
-    <Frame backgroundColor={ThemeColor.B2}>
-      <canvas ref={canvasRef} />
-    </Frame>
-  )
+  return <canvas ref={canvasRef} />
 }
 
 export default Cube

@@ -46,7 +46,8 @@ const H5DescTitle = styled(DescText)`
   @media ${(p) => p.theme.media.mobile} {
     white-space: normal;
   }
-  font-weight: ${(p) => p.theme.weight.light};
+  font-weight: ${(p) => p.theme.weight.regular};
+  color: ${(p) => p.theme.color.gray3};
   font-size: ${(p) => p.theme.size.h5};
 `
 

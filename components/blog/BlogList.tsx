@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import dynamic from 'next/dynamic'
 import { Grid, Row } from 'components/common/Layout'
-
-const BlogItem = dynamic(() => import('./BlogItem'), {
-  ssr: false,
-})
+import BlogItem from 'components/blog/BlogItem'
 
 export const BlogList: React.FC<{ data: string[] }> = ({ data }) => {
   return (

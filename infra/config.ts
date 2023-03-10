@@ -6,5 +6,3 @@ export const PREFIX =
 export const IS_DEV = process.env.NODE_ENV === 'development'
 
 export const SHOW_AUDIO_KEY = 'SHOW_AUDIO'
-
-export const ROUTER_HISTORY_KEY = 'ROUTER_HISTORY'
