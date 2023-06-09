@@ -33,8 +33,8 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
       </BoldText>
       <BoldText
         className={router.pathname === '/learn' ? 'selected' : ''}
-        // onClick={() => router.push(`${PREFIX}/learn/`)}
-        style={{ textDecoration: 'line-through', cursor: 'default' }}
+        onClick={() => router.push(`${PREFIX}/learn/`)}
+        // style={{ textDecoration: 'line-through', cursor: 'default' }}
       >
         learn
       </BoldText>

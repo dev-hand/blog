@@ -1,7 +1,7 @@
 import { ExtraBoldText } from 'components/common/Text'
 import React, { useEffect, useState } from 'react'
 
-const tags = ['developer', 'engineer', 'traveler']
+const tags = ['developer', 'traveler', 'promoter', 'producer']
 
 export const BlogTags: React.FC = () => {
   const [tag, setTag] = useState(tags[0])

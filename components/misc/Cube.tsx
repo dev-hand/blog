@@ -98,6 +98,7 @@ const Cube: React.FC = () => {
       renderer.render(scene, camera)
     }
     animate()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <canvas ref={canvasRef} />

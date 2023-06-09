@@ -5,9 +5,6 @@ import { AboutMain } from 'components/about/AboutMain'
 import { AboutIntro } from 'components/about/AboutIntro'
 import { AboutPhotos } from 'components/about/AboutPhotos'
 import { AboutCareer } from 'components/about/career/Index'
-import dynamic from 'next/dynamic'
-
-const Cube = dynamic(() => import('../components/misc/Cube'), { ssr: false })
 
 const About: NextPage = () => {
   return (
@@ -15,7 +12,6 @@ const About: NextPage = () => {
       <AboutMain />
       <AboutIntro />
       <AboutCareer />
-      <Cube />
       <AboutPhotos />
     </Frame>
   )
