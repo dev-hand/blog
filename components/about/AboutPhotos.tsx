@@ -21,7 +21,7 @@ export const AboutPhotos: React.FC = () => {
       <TitleContainer>
         <MainText>Photos</MainText>
         <H5DescTitle>
-          {`제가 느끼는 시선의 분위기를 사진으로 남기는 것을 좋아합니다.\n아직 부족한 부분이 많지만 사이트에 있는 사진은 모두 제가 직접 찍었습니다.`}
+          {`제가 느끼는 시선의 분위기를 사진으로 남기는 것을 좋아합니다.`}
         </H5DescTitle>
       </TitleContainer>
       <ImageContainer>
