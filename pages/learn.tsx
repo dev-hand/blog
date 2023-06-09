@@ -4,12 +4,12 @@ import { ThemeColor } from 'infra/type'
 import { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 
-const Cube = dynamic(() => import('../components/misc/Cube'), { ssr: false })
+const Three = dynamic(() => import('../components/misc/Three'), { ssr: false })
 
 const Learn: NextPage = () => {
   return (
     <Frame backgroundColor={ThemeColor.B2}>
-      <Cube />
+      <Three />
     </Frame>
   )
 }
