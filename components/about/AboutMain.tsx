@@ -86,19 +86,11 @@ const Main = styled(Row)`
 const HeaderText = styled(ExtraBoldText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.h1};
-    .desktop {
-      display: none;
-    }
   }
-  @media ${(p) => p.theme.media.desktop} {
-    background: url(${PREFIX + '/images/item-19.jpg'});
-    background-size: cover;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    .mobile {
-      display: none;
-    }
-  }
+  background: url(${PREFIX + '/images/item-19.jpg'});
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 102px;
 `
