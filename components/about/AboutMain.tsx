@@ -87,7 +87,7 @@ const HeaderText = styled(ExtraBoldText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.h1};
   }
-  background: url(${PREFIX + '/images/item-19.jpg'});
+  background: url(${PREFIX + '/images/item-18.jpeg'});
   background-size: cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
