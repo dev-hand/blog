@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Column, Row } from 'components/common/Layout'
 import { ExtraBoldText, H1Text, H5Text } from 'components/common/Text'
 import { PREFIX } from 'infra/config'
-import { BlogTags } from './BlogTags'
+import { BlogTags } from 'components/blog/BlogTags'
 import { FadeInFromHalf } from 'components/common/Keyframes'
 
 export const BlogIntro: React.FC = () => (
