@@ -9,7 +9,11 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
 }) => {
   return (
     <Main backgroundColor={backgroundColor}>
-      <a href='https://github.com/devshon' target='_blank' rel='noreferrer'>
+      <a
+        href='https://github.com/hand-seongho'
+        target='_blank'
+        rel='noreferrer'
+      >
         <FooterText>Github</FooterText>
       </a>
       <a
@@ -19,10 +23,10 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
       >
         <FooterText>Resume</FooterText>
       </a>
-      <a href='https://devshon.github.io' target='_blank' rel='noreferrer'>
+      <a href='https://hand-seongho.github.io' target='_blank' rel='noreferrer'>
         <FooterText>Velog</FooterText>
       </a>
-      <FooterText className='date'>@DevShon</FooterText>
+      <FooterText className='date'>@DevHand</FooterText>
     </Main>
   )
 }

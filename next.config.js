@@ -13,7 +13,7 @@ const nextConfig = {
   },
   images: {
     loader: 'imgix',
-    path: ['https://devshon.github.io/blog'],
+    path: ['https://hand-seongho.github.io/blog'],
   },
 }
 
