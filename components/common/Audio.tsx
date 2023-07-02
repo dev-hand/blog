@@ -6,6 +6,7 @@ import { Column, Row } from 'components/common/Layout'
 import { IS_DEV, PREFIX, SHOW_AUDIO_KEY } from 'infra/config'
 import { useRouter } from 'next/router'
 import { setSessionStorage, getSessionStorage } from 'utils/handler'
+import { analytics } from 'infra/analytics'
 
 export const Audio: React.FC = () => {
   const router = useRouter()
@@ -29,6 +30,7 @@ export const Audio: React.FC = () => {
   }
 
   const play = () => {
+    analytics.track('click_audio_play')
     const openUrl = `${PREFIX}/${
       IS_DEV ? router.asPath : router.asPath.slice(6)
     }`
