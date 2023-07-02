@@ -8,6 +8,7 @@ import { FadeInFromHalf } from 'components/common/Keyframes'
 export const AboutIntro: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false)
   const observingTarget = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     if (!observingTarget.current) return
     const observer = new IntersectionObserver((entries) => {
@@ -16,6 +17,7 @@ export const AboutIntro: React.FC = () => {
     observer.observe(observingTarget.current)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
   return (
     <Main>
       <ImageWrapper>
@@ -34,19 +36,19 @@ export const AboutIntro: React.FC = () => {
                 {`기획, 사용자의 요구사항을 탐색하고, 문제현상을 정의하여 솔루션을 정합니다.`}
               </IntroSubText>
               <br />
-              <IntroSubText className='two'>
+              <IntroSubText className='three'>
                 {`설계, 필요한 도구들을 수집하고 모델의 설계와 개발 공수를 측정하여 타임라인을 구축합니다.`}
               </IntroSubText>
               <br />
-              <IntroSubText className='three'>
+              <IntroSubText className='four'>
                 {`디자인, 사용자 경험에 집중한 심플한 초기 모델을 디자인합니다.`}
               </IntroSubText>
               <br />
-              <IntroSubText className='three'>
+              <IntroSubText className='five'>
                 {`개발, 애자일 방법을 추구합니다.\n커뮤니케이션과 PR문화를 중요하게 생각합니다.\n일관된 코드를 사용하고, 읽기 쉬운 코드를 짜기위해 고민합니다.`}
               </IntroSubText>
               <br />
-              <IntroSubText className='three'>
+              <IntroSubText className='six'>
                 {`테스트, 배포 후 사용자 데이터를 측정하여 발견된 문제 현상을 기반으로 기획을 반복합니다.`}
               </IntroSubText>
             </Column>
@@ -106,10 +108,19 @@ const IntroSubText = styled(DescText)`
     animation: ${FadeInFromHalf} 3000ms 1 ease;
   }
   &.two {
-    animation: ${FadeInFromHalf} 6000ms 1 ease;
+    animation: ${FadeInFromHalf} 5000ms 1 ease;
   }
   &.three {
+    animation: ${FadeInFromHalf} 7000ms 1 ease;
+  }
+  &.four {
     animation: ${FadeInFromHalf} 9000ms 1 ease;
+  }
+  &.five {
+    animation: ${FadeInFromHalf} 11000ms 1 ease;
+  }
+  &.six {
+    animation: ${FadeInFromHalf} 13000ms 1 ease;
   }
   color: ${(p) => p.theme.color.white};
 `

@@ -92,7 +92,7 @@ const ContentWrapper = styled(Column)`
   gap: 20px;
   @media ${(p) => p.theme.media.desktop} {
     position: absolute;
-    left: 400px;
+    left: 500px;
     @keyframes aboutContainerFadeSlideLeft {
       0% {
         left: 1800px;
@@ -102,7 +102,7 @@ const ContentWrapper = styled(Column)`
         opacity: 0;
       }
       100% {
-        left: 400px;
+        left: 500px;
         opacity: 1;
       }
     }
