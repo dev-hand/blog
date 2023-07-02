@@ -104,8 +104,31 @@ const IntroSubText = styled(DescText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.default};
   }
+  color: ${(p) => p.theme.color.white};
+  @keyframes FadeInOne {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes FadeInSix {
+    0% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   &.one {
-    animation: ${FadeInFromHalf} 3000ms 1 ease;
+    animation: FadeInOne 3000ms 1 ease;
   }
   &.two {
     animation: ${FadeInFromHalf} 5000ms 1 ease;
@@ -114,15 +137,14 @@ const IntroSubText = styled(DescText)`
     animation: ${FadeInFromHalf} 7000ms 1 ease;
   }
   &.four {
-    animation: ${FadeInFromHalf} 9000ms 1 ease;
+    animation: FadeInSix 6500ms 1 ease;
   }
   &.five {
-    animation: ${FadeInFromHalf} 11000ms 1 ease;
+    animation: FadeInSix 8000ms 1 ease;
   }
   &.six {
-    animation: ${FadeInFromHalf} 13000ms 1 ease;
+    animation: FadeInSix 9500ms 1 ease;
   }
-  color: ${(p) => p.theme.color.white};
 `
 
 const Main = styled(Row)`
