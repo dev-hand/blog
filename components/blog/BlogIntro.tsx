@@ -11,7 +11,7 @@ export const BlogIntro: React.FC = () => (
   <Main>
     <IntroTitleContainer>
       <TitleWrapper>
-        <UltraTitle className='ultraTitle'>{`Hi I'm DevHand`}</UltraTitle>
+        <UltraTitle className='ultraTitle'>{`Hi I'm Hand`}</UltraTitle>
         <H1Title className='h1Title'>{`It's Home`}</H1Title>
       </TitleWrapper>
       <AboutTitleWrapper>

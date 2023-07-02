@@ -19,7 +19,7 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
       >
         <FooterText>Resume</FooterText>
       </a>
-      <FooterText className='date'>@DevHand</FooterText>
+      <FooterText className='date'>#Developer Hand</FooterText>
     </Main>
   )
 }

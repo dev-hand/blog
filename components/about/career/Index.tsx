@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Column } from 'components/common/Layout'
-import { AboutCareerContainer } from './AboutCareerContainer'
+import { AboutCareerContainer } from 'components/about/career/AboutCareerContainer'
 
 const works = [
   '2022.06 초기 스타트업과 개발자의 채용을 연결해주는 채용 서비스 개발',
@@ -11,6 +11,8 @@ const works = [
 ]
 
 const project = [
+  '2023.06 바다 추천 바이럴 플랫폼 개발/매니징',
+  '2023.06 사이드 프로젝트 중계 플랫폼 만들기 프로젝트 개발/매니징',
   '2023.02 개인용 포트폴리오 홈페이지 프로젝트',
   '2022.04 중고 직거래 사이트 당근마켓 웹 클론 프로젝트',
   '2022.03 숨은 고수 찾기 서비스 숨고 웹 클론 프로젝트',
