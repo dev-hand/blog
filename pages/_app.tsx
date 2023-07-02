@@ -8,19 +8,23 @@ import { theme } from 'styles/theme'
 import { PortfolioProvider } from 'infra/context'
 import { PREFIX } from 'infra/config'
 import { Audio } from 'components/common/Audio'
+import { analytics } from 'infra/analytics'
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <>
-    <Head>
-      <title>Many things</title>
-    </Head>
-    <PortfolioProvider value={PREFIX}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <Audio />
-      </ThemeProvider>
-    </PortfolioProvider>
-  </>
-)
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  analytics.init()
+  return (
+    <>
+      <Head>
+        <title>Many things</title>
+      </Head>
+      <PortfolioProvider value={PREFIX}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+          <Audio />
+        </ThemeProvider>
+      </PortfolioProvider>
+    </>
+  )
+}
 
 export default MyApp

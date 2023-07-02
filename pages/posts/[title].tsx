@@ -11,6 +11,7 @@ import { posts } from 'public/posts'
 import { useRouter } from 'next/router'
 import { ThemeColor } from 'infra/type'
 import { theme } from 'styles/theme'
+import { analytics } from 'infra/analytics'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = posts.map((post) => {
@@ -38,6 +39,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 const Post: NextPage<{ data: string }> = ({ data }) => {
+  analytics.traffic('page_post')
   const router = useRouter()
   const title = markdownLayoutFilter('title', data)
   const writer = markdownLayoutFilter('writer', data)

@@ -6,6 +6,7 @@ import { Column, Row } from 'components/common/Layout'
 import { H5Text, SmallText } from 'components/common/Text'
 import { markdownLayoutFilter, getMarkdownThumbnail } from 'utils/format'
 import { PREFIX } from 'infra/config'
+import { analytics } from 'infra/analytics'
 
 const BlogItem: React.FC<{ item: string }> = ({ item }) => {
   const title = markdownLayoutFilter('title', item)
@@ -13,7 +14,7 @@ const BlogItem: React.FC<{ item: string }> = ({ item }) => {
   const thumbnail = getMarkdownThumbnail(item)
   return (
     <Link href={`${PREFIX}/posts/${title}/`}>
-      <Main>
+      <Main onClick={() => analytics.track('click_blog_item', { title })}>
         <ImageWrapper>
           <Image
             src={`/images/${thumbnail}`}

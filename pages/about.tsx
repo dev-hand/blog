@@ -5,8 +5,10 @@ import { AboutMain } from 'components/about/AboutMain'
 import { AboutIntro } from 'components/about/AboutIntro'
 import { AboutPhotos } from 'components/about/AboutPhotos'
 import { AboutCareer } from 'components/about/career/Index'
+import { analytics } from 'infra/analytics'
 
 const About: NextPage = () => {
+  analytics.traffic('page_about')
   return (
     <Frame>
       <AboutMain />

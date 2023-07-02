@@ -8,6 +8,7 @@ import { BlogList } from 'components/blog/BlogList'
 import { ThemeColor } from 'infra/type'
 import { BlogIntro } from 'components/blog/BlogIntro'
 import { Column } from 'components/common/Layout'
+import { analytics } from 'infra/analytics'
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await Promise.all(
@@ -21,6 +22,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Blog: NextPage<{ data: string[] }> = ({ data }) => {
+  analytics.traffic('page_blog')
   return (
     <Frame backgroundColor={ThemeColor.B2}>
       <Main>
