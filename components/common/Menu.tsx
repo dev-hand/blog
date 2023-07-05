@@ -20,19 +20,23 @@ export const Menu: React.FC<{ onMenuClick: () => void }> = ({
         onClick={onMenuClick}
       />
       <BoldText
-        className={router.pathname === '/about' ? 'selected' : ''}
+        className={router.pathname.includes('about') ? 'selected' : ''}
         onClick={() => router.push(`${PREFIX}/about/`)}
       >
         about
       </BoldText>
       <BoldText
-        className={router.pathname === '/' ? 'selected' : ''}
+        className={
+          router.pathname === '/' || router.pathname.includes('posts')
+            ? 'selected'
+            : ''
+        }
         onClick={() => router.push(`${PREFIX}/`)}
       >
         blog
       </BoldText>
       <BoldText
-        className={router.pathname === '/learn' ? 'selected' : ''}
+        className={router.pathname.includes('learn') ? 'selected' : ''}
         onClick={() => router.push(`${PREFIX}/learn/`)}
         // style={{ textDecoration: 'line-through', cursor: 'default' }}
       >
