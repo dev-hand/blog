@@ -58,8 +58,8 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
         <Media>
           <Content>
             <TitleWrapper>
-              <MainTitle>{title}</MainTitle>
-              {writer && <SmallText>{writer}</SmallText>}
+              <MainTitle as='h1'>{title}</MainTitle>
+              {/* {writer && <SmallText>{writer}</SmallText>} */}
             </TitleWrapper>
             <Column>
               <Preview
@@ -70,7 +70,9 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
                 }}
               />
             </Column>
-            <ItalicTitle>- {title} -</ItalicTitle>
+            <ItalicTitle as='h2'>
+              - {writer} [{title}] -
+            </ItalicTitle>
           </Content>
         </Media>
       </Main>
@@ -80,9 +82,9 @@ const Post: NextPage<{ data: string }> = ({ data }) => {
 
 const Content = styled(Column)`
   @media ${(p) => p.theme.media.mobile} {
-    gap: 60px;
+    gap: 40px;
   }
-  gap: 100px;
+  gap: 80px;
 `
 
 const Main = styled(Column)`
@@ -110,7 +112,6 @@ const MainTitle = styled(ExtraBoldText)`
 
 const SmallText = styled(BaseText)`
   @media ${(p) => p.theme.media.mobile} {
-    font-size: ${(p) => p.theme.size.small};
   }
   font-weight: ${(p) => p.theme.weight.regular};
   color: ${(p) => p.theme.color.gray1};
