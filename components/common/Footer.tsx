@@ -17,13 +17,13 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
         <FooterText>Github</FooterText>
       </a>
       <a
-        href='https://florentine-nutmeg-39b.notion.site/SHON-85ae96c1bfd54adf920e45d44e71560c'
+        href='https://www.notion.so/made-by-sean/85ae96c1bfd54adf920e45d44e71560c?pvs=4'
         target='_blank'
         rel='noreferrer'
       >
         <FooterText>Resume</FooterText>
       </a>
-      <FooterText className='date'>#Developer Hand</FooterText>
+      <FooterText className='date'>made by sean</FooterText>
     </Main>
   )
 }
