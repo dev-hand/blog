@@ -9,7 +9,11 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
 }) => {
   return (
     <Main backgroundColor={backgroundColor}>
-      <a href='https://github.com/dev-hand' target='_blank' rel='noreferrer'>
+      <a
+        href='https://github.com/made-by-sean'
+        target='_blank'
+        rel='noreferrer'
+      >
         <FooterText>Github</FooterText>
       </a>
       <a
