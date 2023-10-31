@@ -11,8 +11,8 @@ export const BlogIntro: React.FC = () => (
   <Main>
     <IntroTitleContainer>
       <TitleWrapper>
-        <UltraTitle className='ultraTitle'>{`Hi I'm Sean`}</UltraTitle>
-        <H1Title className='h1Title'>{`It's Home`}</H1Title>
+        <UltraTitle className='ultraTitle'>{`Hi I'm Son`}</UltraTitle>
+        <H1Title className='h1Title'>{`Home`}</H1Title>
       </TitleWrapper>
       <AboutTitleWrapper>
         <Column style={{ gap: 15 }}>
