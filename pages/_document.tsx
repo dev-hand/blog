@@ -41,11 +41,11 @@ class MyDocument extends Document {
           />
           <meta
             property='og:url'
-            content='https://made-by-sean.github.io/blog/about/'
+            content='https://seongho-son.github.io/blog/about/'
           />
           <meta
             property='og:image'
-            content='https://made-by-sean.github.io/blog/images/KakaoTalk_Photo_2023-02-19-20-21-31.jpeg'
+            content='https://seongho-son.github.io/blog/images/KakaoTalk_Photo_2023-02-19-20-21-31.jpeg'
           />
           <link rel='icon' href={`${PREFIX}/icons/profile.svg`} />
           <link rel='preconnect' href='https://fonts.googleapis.com' />

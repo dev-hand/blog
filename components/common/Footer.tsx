@@ -9,15 +9,11 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
 }) => {
   return (
     <Main backgroundColor={backgroundColor}>
-      <a
-        href='https://github.com/made-by-sean'
-        target='_blank'
-        rel='noreferrer'
-      >
+      <a href='https://github.com/seongho-son' target='_blank' rel='noreferrer'>
         <FooterText>Github</FooterText>
       </a>
       <a
-        href='https://www.notion.so/made-by-sean/85ae96c1bfd54adf920e45d44e71560c?pvs=4'
+        href='https://www.notion.so/seongho-son/85ae96c1bfd54adf920e45d44e71560c?pvs=4'
         target='_blank'
         rel='noreferrer'
       >

@@ -1,6 +1,6 @@
 export const PREFIX =
   process.env.NODE_ENV === 'production'
-    ? 'https://made-by-sean.github.io/blog'
+    ? 'https://seongho-son.github.io/blog'
     : 'http://localhost:3001'
 export const IS_DEV = process.env.NODE_ENV === 'development'
 export const SHOW_AUDIO_KEY = 'SHOW_AUDIO'
