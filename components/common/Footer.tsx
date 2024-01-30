@@ -17,7 +17,7 @@ export const Footer: React.FC<{ backgroundColor: ThemeColor }> = ({
         target='_blank'
         rel='noreferrer'
       >
-        <FooterText>Resume</FooterText>
+        <FooterText>Detailed Resume</FooterText>
       </a>
       <FooterText className='date'>Made by Son</FooterText>
     </Main>
@@ -45,7 +45,7 @@ const Main = styled(Row)<{ backgroundColor: ThemeColor }>`
     justify-content: space-between;
     padding: 0 20px;
   }
-  height: 80px;
+  height: 100px;
   align-items: center;
   padding: 0 80px;
   color: ${(p) => p.theme.color.white};

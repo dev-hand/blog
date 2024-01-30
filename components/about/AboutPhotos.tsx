@@ -20,9 +20,7 @@ export const AboutPhotos: React.FC = () => {
     <Main>
       <TitleContainer>
         <MainText>Photos</MainText>
-        <H5DescTitle>
-          {`제가 느끼는 시선의 분위기를 사진으로 남기는 것을 좋아합니다.`}
-        </H5DescTitle>
+        <H5DescTitle>{`시선을 사진으로 남기는 것을 좋아합니다.`}</H5DescTitle>
       </TitleContainer>
       <ImageContainer>
         {images.map((src, index) => (

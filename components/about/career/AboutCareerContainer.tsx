@@ -28,7 +28,7 @@ export const AboutCareerContainer: React.FC<{
           </TitleWrapper>
           <ContentWrapper>
             {data.map((item) => (
-              <H5Title key={item}>{item}</H5Title>
+              <H5Title key={item} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
           </ContentWrapper>
         </>
@@ -40,6 +40,10 @@ export const AboutCareerContainer: React.FC<{
 const H5Title = styled(DescText)`
   @media ${(p) => p.theme.media.mobile} {
     font-size: ${(p) => p.theme.size.default};
+  }
+  span {
+    color: ${(p) => p.theme.color.gray2};
+    font-weight: ${(p) => p.theme.weight.semiBold};
   }
   white-space: pre-wrap;
   font-weight: ${(p) => p.theme.weight.regular};
